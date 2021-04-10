@@ -20,8 +20,21 @@ ZOOM Checker.exe has been developed for that shortfall.
 
 # NOTES
 The 'ZOOM Checker' program is a floating dropbox, that will remember its screen position when closed.
+
 The 'ZOOM Checker' program creates two files - Games.txt and Games.ini.
+
 Games.txt is an alphanumeric listing of all games discovered.
+
 Games.ini is also alphanumeric for the most part, but on subsequent runs of the program any newer game titles will appear at the end. It is also a record of games that may no longer exist.
+
 The 'ZOOM Checker' program creates a third file on subsequent runs - Oldgames.txt.
+
 Oldgames.txt is the previous 'Games.txt' file, and can be considered a backup.
+
+The DISPLAY button on the dropbox, opens the 'Games.ini' file in the Display Viewer, where the most recent additions at the ZOOM Platform website, will be displayed last.
+
+![zoomcheck_display_end](https://github.com/Twombs/ZOOM-Checker/blob/main/Zoomcheck_display_end.png?raw=true)
+
+Date of original discovery is displayed in the third column, with any subsequent (current) check date displayed after (shown in brackets).
+
+First row entry is the number of game titles listed. Last row entry is the number of game titles currently found versus number listed.
