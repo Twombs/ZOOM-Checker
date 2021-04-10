@@ -38,3 +38,15 @@ The DISPLAY button on the dropbox, opens the 'Games.ini' file in the Display Vie
 Date of original discovery is displayed in the third column, with any subsequent (current) check date displayed after (shown in brackets).
 
 First row entry is the number of game titles listed. Last row entry is the number of game titles currently found versus number listed.
+
+The date in the DATE column of the Display Viewer, is also a way of checking for games that no longer exist at the the ZOOM Platform.
+
+The 'Titles List' button opens the 'Games.txt' file in your default text file viewer (i.e. Notepad).
+
+The entries in the 'Games.txt' file will always be in complete alphanumeric order, but the most recent game title additions, will have the text ' (NEW)' after the name, which you can easily search for.
+
+![zoomcheck_notepad](https://github.com/Twombs/ZOOM-Checker/blob/main/Zoomcheck_notepad.png?raw=true)
+
+Game titles no longer existing at the ZOOM Platform, won't appear in this file.
+
+ZOOM Checker.exe can also be used from the command-line, so you could create a Registry right-click entry for it with HTML files if you wished, instead of using drag & drop with the floating dropbox.
