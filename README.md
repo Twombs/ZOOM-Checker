@@ -39,7 +39,7 @@ Date of original discovery is displayed in the third column, with any subsequent
 
 First row entry is the number of game titles listed. Last row entry is the number of game titles currently found versus number listed.
 
-The date in the DATE column of the Display Viewer, is also a way of checking for games that no longer exist at the the ZOOM Platform.
+The date in the DATE column of the Display Viewer, is also a way of checking for games that no longer exist at the ZOOM Platform.
 
 The 'Titles List' button opens the 'Games.txt' file in your default text file viewer (i.e. Notepad).
 
