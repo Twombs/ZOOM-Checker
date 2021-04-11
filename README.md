@@ -16,7 +16,7 @@ ZOOM Checker.exe has been developed for that shortfall.
 6. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
 7. Wait while titles are being extracted and then displayed.
 
-![zoomcheck_display](https://github.com/Twombs/ZOOM-Checker/blob/main/Zoomcheck_display.png?raw=true)
+![zoomcheck_display](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_display.png?raw=true)
 
 # NOTES
 The 'ZOOM Checker' program is a floating dropbox, that will remember its screen position when closed.
@@ -33,7 +33,7 @@ Oldgames.txt is the previous 'Games.txt' file, and can be considered a backup.
 
 The DISPLAY button on the dropbox, opens the 'Games.ini' file in the Display Viewer, where the most recent additions at the ZOOM Platform website, will be displayed last.
 
-![zoomcheck_display_end](https://github.com/Twombs/ZOOM-Checker/blob/main/Zoomcheck_display_end.png?raw=true)
+![zoomcheck_display_end](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_display_end.png?raw=true)
 
 Date of original discovery is displayed in the third column, with any subsequent (current) check date displayed after (shown in brackets).
 
@@ -45,7 +45,7 @@ The 'Titles List' button opens the 'Games.txt' file in your default text file vi
 
 The entries in the 'Games.txt' file will always be in complete alphanumeric order, but the most recent game title additions, will have the text ' (NEW)' after the name, which you can easily search for.
 
-![zoomcheck_notepad](https://github.com/Twombs/ZOOM-Checker/blob/main/Zoomcheck_notepad.png?raw=true)
+![zoomcheck_notepad](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_notepad.png?raw=true)
 
 Game titles no longer existing at the ZOOM Platform, won't appear in this file.
 
