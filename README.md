@@ -8,13 +8,24 @@ The ZOOM Platform currently has no easy way to determine what games have been re
 ZOOM Checker.exe has been developed for that shortfall.
 
 # HOW TO USE
+(Original Method - Part 1)
 1. Go to the ZOOM Platform website.
 2. Select the 'GAMES' tab.
 3. Scroll the list of games until all have been shown.
 4. Save the web page to file (i.e. Zoom Platform.html).
 5. Start the 'ZOOM Checker.exe' program.
-6. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
-7. Wait while titles are being extracted and then displayed.
+(New Method - Part 1)
+1. Start the 'ZOOM Checker.exe' program.
+2. Click the GO button, to go to the ZOOM Platform 'Games' web page.
+3. Wait until Games page has finished loading (scrollbar is the best indicator of this).
+4. Click the TAB button, to load the next section of games.
+5. Wait until next section has finished loading (scrollbar is the best indicator of this).
+6. Click the TAB button again (wait & repeat) until it becomes a SAVE button.
+7. Check all sections have loaded, and manually scroll if not.
+8. Click the SAVE button to save the web page of games to file.
+(Part 2)
+1. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
+2. Wait while titles are being extracted and then displayed.
 
 ![zoomcheck_display](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_display.png?raw=true)
 
