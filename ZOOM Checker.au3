@@ -23,12 +23,14 @@
 _Singleton("get-game-titles-timboli")
 
 Global $a, $array, $date, $drop, $exists, $found, $game, $gamelist, $games, $gamesfile, $i, $inifle, $line, $new, $oldlist
-Global $path, $s, $sect, $target, $tot, $webpage
+Global $path, $s, $sect, $target, $tot, $version, $webpage
 
 $gamelist = @ScriptDir & "\Games.txt"
 $gamesfile = @ScriptDir & "\Games.ini"
 $inifle = @ScriptDir & "\Settings.ini"
 $oldlist = @ScriptDir & "\Oldgames.txt"
+$version = "v1.1"
+; April 2021
 
 $games = ""
 If $CmdLine[0] = "" Then
@@ -47,27 +49,36 @@ EndIf
 Exit
 
 Func DropBox()
-	Local $Button_display, $Label_drop
+	Local $Button_display, $Button_go, $Button_list, $Label_drop, $Label_status
 	Local $atts, $DropboxGUI, $left, $srcfle, $style, $top, $winpos
 	;
 	$left = IniRead($inifle, "Program Window", "left", -1)
 	$top = IniRead($inifle, "Program Window", "top", -1)
 	$style = $WS_CAPTION + $WS_POPUP + $WS_CLIPSIBLINGS + $WS_SYSMENU
-	$DropboxGUI = GUICreate("ZOOM Checker", 155, 130, $left, $top, $style, $WS_EX_TOPMOST + $WS_EX_ACCEPTFILES)
+	$DropboxGUI = GUICreate("ZOOM Checker  " & $version, 215, 160, $left, $top, $style, $WS_EX_TOPMOST + $WS_EX_ACCEPTFILES)
 	;
 	; CONTROLS
-	$Label_drop = GUICtrlCreateLabel($target, 1, 1, 153, 92, $SS_CENTER)
-	GUICtrlSetFont($Label_drop, 9, 600, 0, "Small Fonts")
+	$Label_drop = GUICtrlCreateLabel($target, 1, 1, 213, 107, $SS_CENTER)
+	GUICtrlSetFont($Label_drop, 9, 600)
 	GUICtrlSetState($Label_drop, $GUI_DROPACCEPTED)
 	GUICtrlSetTip($Label_drop, "Drag & Drop saved ZOOM Platform web page file here!")
 	;
-	$Button_display = GUICtrlCreateButton("DISPLAY", 2, 102, 70, 23)
+	$Label_status = GUICtrlCreateLabel("Click GO to go to the Games web page", 1, 108, 213, 18, $SS_CENTER + $SS_CENTERIMAGE)
+	GUICtrlSetFont($Label_status, 7, 600, 0, "Small Fonts")
+	GUICtrlSetBkColor($Label_status, $COLOR_LIME)
+	GUICtrlSetColor($Label_status, $COLOR_BLACK)
+	;
+	$Button_display = GUICtrlCreateButton("DISPLAY", 2, 132, 70, 23)
 	GUICtrlSetFont($Button_display, 7, 600, 0, "Small Fonts")
 	GUICtrlSetTip($Button_display, "Display the list of titles!")
 	;
-	$Button_list = GUICtrlCreateButton("Titles List", 82, 102, 70, 23)
+	$Button_list = GUICtrlCreateButton("Titles List", 82, 132, 70, 23)
 	GUICtrlSetFont($Button_list, 7, 600, 0, "Small Fonts")
 	GUICtrlSetTip($Button_list, "View the Titles List file!")
+	;
+	$Button_go = GUICtrlCreateButton("GO", 162, 132, 50, 23)
+	GUICtrlSetFont($Button_go, 7, 600, 0, "Small Fonts")
+	GUICtrlSetTip($Button_go, "Go to Games page at ZOOM Platform!")
 	;
 	; SETTINGS
 	GUICtrlSetBkColor($Label_drop, $COLOR_BLUE)
@@ -109,7 +120,7 @@ Func DropBox()
 					;GUICtrlSetData($Label_drop, @LF & @LF & @LF & "Extracting")
 					ExtractTitles("drop")
 					GUICtrlSetBkColor($Label_drop, $COLOR_GREEN)
-					GUICtrlSetData($Label_drop, @LF & @LF & @LF & "Display")
+					GUICtrlSetData($Label_drop, @LF & @LF & @LF & "Display Viewer")
 					DisplayTitles("drop")
 					GUICtrlSetData($Label_drop, $target)
 					GUICtrlSetBkColor($Label_drop, $COLOR_BLUE)
@@ -117,6 +128,58 @@ Func DropBox()
 			Case $msg = $Button_list
 				; View the Titles List file
 				If FileExists($gamelist) Then ShellExecute($gamelist)
+			Case $msg = $Button_go
+				; Go to Games page at ZOOM Platform
+				$buttxt = GUICtrlRead($Button_go)
+				If _IsPressed("11") Then
+					If $buttxt = "GO" Then
+						GUICtrlSetData($Button_go, "TAB")
+						GUICtrlSetBkColor($Label_status, $COLOR_YELLOW)
+						$tabs = 0
+						GUICtrlSetData($Label_status, "Click TAB to load the next section")
+					ElseIf $buttxt = "TAB" Then
+						GUICtrlSetData($Button_go, "SAVE")
+						GUICtrlSetBkColor($Label_status, $COLOR_FUCHSIA)
+						GUICtrlSetData($Label_status, "Click SAVE to save the web page")
+					Else
+						GUICtrlSetData($Button_go, "GO")
+						GUICtrlSetBkColor($Label_status, $COLOR_LIME)
+						GUICtrlSetData($Label_status, "Click GO to go to the Games web page")
+					EndIf
+				ElseIf $buttxt = "GO" Then
+					ShellExecute("https://www.zoom-platform.com/search")
+					GUICtrlSetData($Button_go, "TAB")
+					$tabs = 0
+					GUICtrlSetBkColor($Label_status, $COLOR_GRAY)
+					GUICtrlSetData($Label_status, "Please wait until page has loaded")
+					Sleep(4000)
+					GUICtrlSetBkColor($Label_status, $COLOR_YELLOW)
+					GUICtrlSetData($Label_status, "Click TAB to load the next section")
+				ElseIf $buttxt = "TAB" Then
+					WinActivate("Zoom Platform", "")
+					If $tabs = 0 Then
+						Send("+{TAB 2}")
+						$tabs = 2
+						GUICtrlSetBkColor($Label_status, $COLOR_GRAY)
+						GUICtrlSetData($Label_status, "Please wait until section has loaded")
+						Sleep(3000)
+						GUICtrlSetBkColor($Label_status, $COLOR_YELLOW)
+						GUICtrlSetData($Label_status, "Click TAB to load the next section")
+					Else
+						Send("+{TAB}")
+						$tabs = $tabs + 1
+						If $tabs = 6 Then
+							GUICtrlSetData($Button_go, "SAVE")
+							GUICtrlSetBkColor($Label_status, $COLOR_FUCHSIA)
+							GUICtrlSetData($Label_status, "Click SAVE to save the web page")
+						EndIf
+					EndIf
+				Else
+					WinActivate("Zoom Platform", "")
+					Send("^s")
+					GUICtrlSetBkColor($Label_status, $COLOR_SKYBLUE)
+					GUICtrlSetData($Label_status, "CTRL with button click changes state")
+				EndIf
 			Case $msg = $Button_display
 				; Display the list of titles
 				DisplayTitles()

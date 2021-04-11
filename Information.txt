@@ -5,13 +5,37 @@ ZOOM Checker.exe has been developed for that shortfall.
 
 HOW TO USE
 ----------
+(Part 1 - Original Method)
 1. Go to the ZOOM Platform website.
-2. Select the 'GAMES' tab.
-3. Scroll the list of games until all have been shown.
-4. Save the web page to file (i.e. Zoom Platform.html).
+2. Select the 'GAMES' tab. GO button also does this.
+3. Scroll the list of games until all have been shown. TAB button does this when clicked repeatedly.
+4. Save the web page to file (i.e. Zoom Platform.html). SAVE button does this.
 5. Start the 'ZOOM Checker.exe' program.
-6. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
-7. Wait while titles are being extracted and then displayed.
+(Part 1 - New Method)
+1. Start the 'ZOOM Checker.exe' program.
+2. Click the GO button.
+3. Wait until Games page has finished loading (scrollbar is the best indicator of this).
+4. Click the TAB button.
+5. Wait until next section has finished loading (scrollbar is the best indicator of this).
+6. Click the TAB button again (wait & repeat) until it becomes a SAVE button.
+7. Check all sections have loaded, and manually scroll if not.
+8. Click the SAVE button to save the web page of games to file.
+(Part 2)
+1. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
+2. Wait while titles are being extracted and then displayed.
+
+ADVICE
+------
+The GO button has three states - GO, TAB, SAVE.
+Holding down CTRL while clicking the GO button cycles those states.
+Each state gives a colored status message.
+Cycle the states if you need to repeat or skip one.
+
+IMPORTANT
+---------
+Don't rush, wait for the web page to complete loading, before clicking the TAB button.
+Scrollbar of the web page at right, is a good indicator of page or section having finished loading.
+You may need to do an additional TAB button click to have it change to SAVE (or cycle it).
 
 NOTES
 -----
