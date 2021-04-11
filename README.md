@@ -14,6 +14,7 @@ ZOOM Checker.exe has been developed for that shortfall.
 3. Scroll the list of games until all have been shown.
 4. Save the web page to file (i.e. Zoom Platform.html).
 5. Start the 'ZOOM Checker.exe' program.
+
 (New Method - Part 1)
 1. Start the 'ZOOM Checker.exe' program.
 2. Click the GO button, to go to the ZOOM Platform 'Games' web page.
@@ -23,6 +24,7 @@ ZOOM Checker.exe has been developed for that shortfall.
 6. Click the TAB button again (wait & repeat) until it becomes a SAVE button.
 7. Check all sections have loaded, and manually scroll if not.
 8. Click the SAVE button to save the web page of games to file.
+
 (Part 2)
 1. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
 2. Wait while titles are being extracted and then displayed.
