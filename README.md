@@ -19,6 +19,7 @@ ZOOM Checker.exe has been developed for that shortfall.
 1. Start the 'ZOOM Checker.exe' program.
 2. Click the GO button, to go to the ZOOM Platform 'Games' web page.
 3. Wait until Games page has finished loading (scrollbar is the best indicator of this).
+![zoomcheck_dropbox_2](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_2.png?raw=true)
 4. Click the TAB button, to load the next section of games.
 5. Wait until next section has finished loading (scrollbar is the best indicator of this).
 6. Click the TAB button again (wait & repeat) until it becomes a SAVE button.
