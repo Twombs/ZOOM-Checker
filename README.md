@@ -32,6 +32,9 @@ ZOOM Checker.exe has been developed for that shortfall.
 1. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
 2. Wait while titles are being extracted and then displayed.
 
+![zoomcheck_dropbox_4](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_4.png?raw=true)
+![zoomcheck_dropbox_5](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_5.png?raw=true)
+
 ![zoomcheck_display](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_display.png?raw=true)
 
 # NOTES
