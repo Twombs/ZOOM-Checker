@@ -1,0 +1,33 @@
+
+The ZOOM Platform currently has no easy way to determine what games have been recently added.
+
+ZOOM Checker.exe has been developed for that shortfall.
+
+HOW TO USE
+----------
+1. Go to the ZOOM Platform website.
+2. Select the 'GAMES' tab.
+3. Scroll the list of games until all have been shown.
+4. Save the web page to file (i.e. Zoom Platform.html).
+5. Start the 'ZOOM Checker.exe' program.
+6. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
+7. Wait while titles are being extracted and then displayed.
+
+NOTES
+-----
+The 'ZOOM Checker' program is a floating dropbox, that will remember its screen position when closed.
+The 'ZOOM Checker' program creates two files - Games.txt and Games.ini.
+Games.txt is an alphanumeric listing of all games discovered.
+Games.ini is also alphanumeric for the most part, but on subsequent runs of the program any newer game titles will appear at the end. It is also a record of games that may no longer exist.
+The 'ZOOM Checker' program creates a third file on subsequent runs - Oldgames.txt.
+Oldgames.txt is the previous 'Games.txt' file, and can be considered a backup.
+
+The DISPLAY button on the dropbox, opens the 'Games.ini' file in the Display Viewer, where the most recent additions at the ZOOM Platform website, will be displayed last. Date of original discovery is displayed in the third column, with any subsequent (current) check date displayed after (shown in brackets). First row entry is the number of game titles listed. Last row entry is the number of game titles currently found versus number listed.
+
+The date in the DATE column of the Display Viewer, is also a way of checking for games that no longer exist at the the ZOOM Platform.
+
+The 'Titles List' button opens the 'Games.txt' file in your default text file viewer (i.e. Notepad).
+The entries in the 'Games.txt' file will always be in complete alphanumeric order, but the most recent game title additions, will have the text ' (NEW)' after the name, which you can easily search for.
+Game titles no longer existing at the ZOOM Platform, won't appear in this file.
+
+ZOOM Checker.exe can also be used from the command-line, so you could create a Registry right-click entry for it with HTML files if you wished, instead of using drag & drop with the floating dropbox.
