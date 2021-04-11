@@ -68,4 +68,4 @@ Entries in the 'Games.txt' file will always be in complete alphanumeric order, b
 
 Game titles no longer existing at the ZOOM Platform, won't appear in this file.
 
-ZOOM Checker.exe can also be used from the command-line, so you could create a Registry right-click entry for it with HTML files if you wished, instead of using drag & drop with the floating dropbox.
+ZOOM Checker.exe can also be used from the command-line, so you could create a Registry right-click entry for it with HTML files if you wished, instead of using drag & drop with the floating dropbox. There are obvious benefits to using the dropbox though.
