@@ -19,12 +19,14 @@ ZOOM Checker.exe has been developed for that shortfall.
 1. Start the 'ZOOM Checker.exe' program.
 2. Click the GO button, to go to the ZOOM Platform 'Games' web page.
 3. Wait until Games page has finished loading (scrollbar is the best indicator of this).
-![zoomcheck_dropbox_2](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_2.png?raw=true)
 4. Click the TAB button, to load the next section of games.
 5. Wait until next section has finished loading (scrollbar is the best indicator of this).
 6. Click the TAB button again (wait & repeat) until it becomes a SAVE button.
 7. Check all sections have loaded, and manually scroll if not.
 8. Click the SAVE button to save the web page of games to file.
+
+![zoomcheck_dropbox_2](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_2.png?raw=true)
+![zoomcheck_dropbox_3](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_3.png?raw=true)
 
 (Part 2)
 1. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
