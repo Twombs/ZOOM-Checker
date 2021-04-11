@@ -62,7 +62,7 @@ The date in the DATE column of the Display Viewer, is also a way of checking for
 
 The 'Titles List' button opens the 'Games.txt' file in your default text file viewer (i.e. Notepad).
 
-The entries in the 'Games.txt' file will always be in complete alphanumeric order, but the most recent game title additions, will have the text ' (NEW)' after the name, which you can easily search for.
+Entries in the 'Games.txt' file will always be in complete alphanumeric order, but most recent game title additions, will have the text '(NEW)' after the name, which you can easily search for.
 
 ![zoomcheck_notepad](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_notepad.png?raw=true)
 
