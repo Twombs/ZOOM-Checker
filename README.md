@@ -3,30 +3,40 @@ Extract game titles from a saved ZOOM Platform web page.
 
 ![zoomcheck_dropbox_1](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_1.png?raw=true)
 
-The ZOOM Platform currently has no easy way to determine what games have been recently added.
+The ZOOM Platform previously had no easy way to determine what games have been recently added. 'News' pages now show this.
 
-ZOOM Checker.exe has been developed for that shortfall.
+ZOOM Checker.exe had been developed for that prior shortfall. Some features of this program remain handy.
 
 # HOW TO USE
-(Original Method - Part 1)
+(Part 1 - Original Method)
 1. Go to the ZOOM Platform website.
 2. Select the 'GAMES' tab.
 3. Scroll the list of games until all have been shown.
 4. Save the web page to file (i.e. Zoom Platform.html).
 5. Start the 'ZOOM Checker.exe' program.
+6. Go to Part 2.
 
-(New Method - Part 1)
-1. Start the 'ZOOM Checker.exe' program.
-2. Click the GO button, to go to the ZOOM Platform 'Games' web page.
-3. Wait until Games page has finished loading (scrollbar is the best indicator of this).
-4. Click the TAB button, to load the next section of games.
-5. Wait until next section has finished loading (scrollbar is the best indicator of this).
-6. Click the TAB button again (wait & repeat) until it becomes a SAVE button.
-7. Check all sections have loaded, and manually scroll if not.
-8. Click the SAVE button to save the web page of games to file.
+(Part 1 - TAB or LOAD Method)
+Start the 'ZOOM Checker.exe' program.
+(Part 1 - LOAD Method only)
+If 'One TAB' is not enabled, then right-click the GO button and enable that option.
+(Part 1 - TAB or LOAD Method)
+1. Click the GO button, to go to the ZOOM Platform 'Games' web page.
+2. Wait until Games page has finished loading (scrollbar is best indicator of this).
+(Part 1 - TAB Method only)
+1. Click the TAB button, to load the next section of games.
+2. Wait until next section has finished loading (scrollbar is best indicator of this).
+3. Click the TAB button again (wait & repeat) until it becomes a SAVE button.
+(Part 1 - LOAD Method only)
+1. Click the LOAD button.
+2. Wait until all game sections have finished loading (scrollbar is best indicator of this).
+(Part 1 - TAB or LOAD Method)
+1. Check all sections have loaded, and manually scroll if not.
+2. Click the SAVE button to save the web page of games to file.
 
 ![zoomcheck_dropbox_2](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_2.png?raw=true)
 ![zoomcheck_dropbox_3](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_3.png?raw=true)
+![zoomcheck_dropbox_6](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_6.png?raw=true)
 
 (Part 2)
 1. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
