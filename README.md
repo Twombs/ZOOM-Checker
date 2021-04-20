@@ -8,7 +8,7 @@ The ZOOM Platform previously had no easy way to determine what games have been r
 ZOOM Checker.exe had been developed for that prior shortfall. Some features of this program remain handy.
 
 # HOW TO USE
-(Part 1 - Original Method)
+### (Part 1 - Original Method)
 1. Go to the ZOOM Platform website.
 2. Select the 'GAMES' tab.
 3. Scroll the list of games until all have been shown.
@@ -16,36 +16,38 @@ ZOOM Checker.exe had been developed for that prior shortfall. Some features of t
 5. Start the 'ZOOM Checker.exe' program.
 6. Go to Part 2.
 
-(Part 1 - TAB or LOAD Method)
+### (Part 1 - New Method)
+(Part 1 - TAB or LOAD option)
 
 Start the 'ZOOM Checker.exe' program.
 
-(Part 1 - LOAD Method only)
+(Part 1 - LOAD option only)
 
 If 'One TAB' is not enabled, then right-click the GO button and enable that option.
 
-(Part 1 - TAB or LOAD Method)
+(Part 1 - TAB or LOAD option)
 1. Click the GO button, to go to the ZOOM Platform 'Games' web page.
 2. Wait until Games page has finished loading (scrollbar is best indicator of this).
 
-(Part 1 - TAB Method only)
+(Part 1 - TAB option only)
 1. Click the TAB button, to load the next section of games.
 2. Wait until next section has finished loading (scrollbar is best indicator of this).
 3. Click the TAB button again (wait & repeat) until it becomes a SAVE button.
 
-(Part 1 - LOAD Method only)
+(Part 1 - LOAD option only)
 1. Click the LOAD button.
 2. Wait until all game sections have finished loading (scrollbar is best indicator of this).
 
-(Part 1 - TAB or LOAD Method)
+(Part 1 - TAB or LOAD option)
 1. Check all sections have loaded, and manually scroll if not.
 2. Click the SAVE button to save the web page of games to file.
+3. Go to Part 2.
 
 ![zoomcheck_dropbox_2](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_2.png?raw=true)
 ![zoomcheck_dropbox_6](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_6.png?raw=true)
 ![zoomcheck_dropbox_3](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_3.png?raw=true)
 
-(Part 2)
+### (Part 2)
 1. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
 2. Wait while titles are being extracted and then displayed.
 
