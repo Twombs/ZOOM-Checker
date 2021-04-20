@@ -29,7 +29,7 @@ $gamelist = @ScriptDir & "\Games.txt"
 $gamesfile = @ScriptDir & "\Games.ini"
 $inifle = @ScriptDir & "\Settings.ini"
 $oldlist = @ScriptDir & "\Oldgames.txt"
-$version = "v1.1"
+$version = "v1.2"
 ; April 2021
 
 $games = ""
@@ -49,8 +49,8 @@ EndIf
 Exit
 
 Func DropBox()
-	Local $Button_display, $Button_go, $Button_list, $Label_drop, $Label_status
-	Local $atts, $DropboxGUI, $left, $srcfle, $style, $top, $winpos
+	Local $Button_display, $Button_go, $Button_list, $Item_one, $Label_drop, $Label_status, $Menu_go
+	Local $atts, $DropboxGUI, $left, $onetab, $srcfle, $style, $top, $winpos
 	;
 	$left = IniRead($inifle, "Program Window", "left", -1)
 	$top = IniRead($inifle, "Program Window", "top", -1)
@@ -72,15 +72,29 @@ Func DropBox()
 	GUICtrlSetFont($Button_display, 7, 600, 0, "Small Fonts")
 	GUICtrlSetTip($Button_display, "Display the list of titles!")
 	;
-	$Button_list = GUICtrlCreateButton("Titles List", 82, 132, 70, 23)
+	$Button_list = GUICtrlCreateButton("Titles List", 81, 132, 70, 23)
 	GUICtrlSetFont($Button_list, 7, 600, 0, "Small Fonts")
 	GUICtrlSetTip($Button_list, "View the Titles List file!")
 	;
-	$Button_go = GUICtrlCreateButton("GO", 162, 132, 50, 23)
+	$Button_go = GUICtrlCreateButton("GO", 160, 132, 52, 23)
 	GUICtrlSetFont($Button_go, 7, 600, 0, "Small Fonts")
 	GUICtrlSetTip($Button_go, "Go to Games page at ZOOM Platform!")
 	;
+	; CONTEXT MENU
+	$Menu_go = GUICtrlCreateContextMenu($Button_go)
+	$Item_one = GUICtrlCreateMenuItem("One TAB", $Menu_go, -1, 0)
+	;
 	; SETTINGS
+	$onetab = IniRead($inifle, "GO Button", "one_tab", "")
+	If $onetab = "" Then
+		$onetab = 4
+		IniWrite($inifle, "GO Button", "one_tab", $onetab)
+	EndIf
+	GUICtrlSetState($Item_one, $onetab)
+	;
+	; Testing
+	;GUICtrlSetData($Label_status, "Please wait for all pages to fully load")
+	;
 	GUICtrlSetBkColor($Label_drop, $COLOR_BLUE)
 	GUICtrlSetColor($Label_drop, $COLOR_YELLOW)
 
@@ -133,11 +147,16 @@ Func DropBox()
 				$buttxt = GUICtrlRead($Button_go)
 				If _IsPressed("11") Then
 					If $buttxt = "GO" Then
-						GUICtrlSetData($Button_go, "TAB")
 						GUICtrlSetBkColor($Label_status, $COLOR_YELLOW)
-						$tabs = 0
-						GUICtrlSetData($Label_status, "Click TAB to load the next section")
-					ElseIf $buttxt = "TAB" Then
+						If $onetab = 1 Then
+							GUICtrlSetData($Button_go, "LOAD")
+							GUICtrlSetData($Label_status, "Click LOAD to load all game pages")
+						Else
+							GUICtrlSetData($Button_go, "TAB")
+							$tabs = 0
+							GUICtrlSetData($Label_status, "Click TAB to load the next section")
+						EndIf
+					ElseIf $buttxt = "TAB" Or $buttxt = "LOAD" Then
 						GUICtrlSetData($Button_go, "SAVE")
 						GUICtrlSetBkColor($Label_status, $COLOR_FUCHSIA)
 						GUICtrlSetData($Label_status, "Click SAVE to save the web page")
@@ -148,33 +167,51 @@ Func DropBox()
 					EndIf
 				ElseIf $buttxt = "GO" Then
 					ShellExecute("https://www.zoom-platform.com/search")
-					GUICtrlSetData($Button_go, "TAB")
-					$tabs = 0
 					GUICtrlSetBkColor($Label_status, $COLOR_GRAY)
-					GUICtrlSetData($Label_status, "Please wait until page has loaded")
+					GUICtrlSetData($Label_status, "Please wait until page has fully loaded")
 					Sleep(4000)
 					GUICtrlSetBkColor($Label_status, $COLOR_YELLOW)
-					GUICtrlSetData($Label_status, "Click TAB to load the next section")
-				ElseIf $buttxt = "TAB" Then
-					WinActivate("Zoom Platform", "")
-					If $tabs = 0 Then
-						Send("+{TAB 2}")
-						$tabs = 2
-						GUICtrlSetBkColor($Label_status, $COLOR_GRAY)
-						GUICtrlSetData($Label_status, "Please wait until section has loaded")
-						Sleep(3000)
-						GUICtrlSetBkColor($Label_status, $COLOR_YELLOW)
-						GUICtrlSetData($Label_status, "Click TAB to load the next section")
+					If $onetab = 1 Then
+						GUICtrlSetData($Button_go, "LOAD")
+						GUICtrlSetData($Label_status, "Click LOAD to load all game pages")
 					Else
-						Send("+{TAB}")
-						$tabs = $tabs + 1
-						If $tabs = 6 Then
-							GUICtrlSetData($Button_go, "SAVE")
-							GUICtrlSetBkColor($Label_status, $COLOR_FUCHSIA)
-							GUICtrlSetData($Label_status, "Click SAVE to save the web page")
+						GUICtrlSetData($Button_go, "TAB")
+						$tabs = 0
+						GUICtrlSetData($Label_status, "Click TAB to load the next section")
+					EndIf
+				ElseIf $buttxt = "TAB" Or $buttxt = "LOAD" Then
+					WinActivate("Zoom Platform", "")
+					If $onetab = 1 Then
+						Send("^f")
+						Sleep(1000)
+						Send("All Rights Reserved.")
+						;Send("©")
+						GUICtrlSetBkColor($Label_status, $COLOR_GRAY)
+						GUICtrlSetData($Label_status, "Please wait for all pages to fully load")
+						Sleep(3000)
+						GUICtrlSetData($Button_go, "SAVE")
+						GUICtrlSetBkColor($Label_status, $COLOR_FUCHSIA)
+						GUICtrlSetData($Label_status, "Click SAVE to save the web page")
+					Else
+						If $tabs = 0 Then
+							Send("+{TAB 2}")
+							$tabs = 2
+							GUICtrlSetBkColor($Label_status, $COLOR_GRAY)
+							GUICtrlSetData($Label_status, "Please wait until section has loaded")
+							Sleep(3000)
+							GUICtrlSetBkColor($Label_status, $COLOR_YELLOW)
+							GUICtrlSetData($Label_status, "Click TAB to load the next section")
+						Else
+							Send("+{TAB}")
+							$tabs = $tabs + 1
+							If $tabs = 6 Then
+								GUICtrlSetData($Button_go, "SAVE")
+								GUICtrlSetBkColor($Label_status, $COLOR_FUCHSIA)
+								GUICtrlSetData($Label_status, "Click SAVE to save the web page")
+							EndIf
 						EndIf
 					EndIf
-				Else
+				ElseIf $buttxt = "SAVE" Then
 					WinActivate("Zoom Platform", "")
 					Send("^s")
 					GUICtrlSetBkColor($Label_status, $COLOR_SKYBLUE)
@@ -183,6 +220,15 @@ Func DropBox()
 			Case $msg = $Button_display
 				; Display the list of titles
 				DisplayTitles()
+			Case $msg = $Item_one
+				; GO Button - One TAB
+				If $onetab = 4 Then
+					$onetab = 1
+				Else
+					$onetab = 4
+				EndIf
+				GUICtrlSetState($Item_one, $onetab)
+				IniWrite($inifle, "GO Button", "one_tab", $onetab)
 			Case Else
 		EndSelect
 	WEnd
