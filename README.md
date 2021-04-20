@@ -3,7 +3,7 @@ Extract game titles from a saved ZOOM Platform web page.
 
 ![zoomcheck_dropbox_1](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_1.png?raw=true)
 
-The ZOOM Platform previously had no easy way to determine what games have been recently added. 'News' pages now show this.
+The ZOOM Platform previously had no easy way to determine what games have been recently added. 'News' page now show this.
 
 ZOOM Checker.exe had been developed for that prior shortfall. Some features of this program remain handy.
 
