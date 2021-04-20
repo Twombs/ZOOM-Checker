@@ -17,19 +17,26 @@ ZOOM Checker.exe had been developed for that prior shortfall. Some features of t
 6. Go to Part 2.
 
 (Part 1 - TAB or LOAD Method)
+
 Start the 'ZOOM Checker.exe' program.
+
 (Part 1 - LOAD Method only)
+
 If 'One TAB' is not enabled, then right-click the GO button and enable that option.
+
 (Part 1 - TAB or LOAD Method)
 1. Click the GO button, to go to the ZOOM Platform 'Games' web page.
 2. Wait until Games page has finished loading (scrollbar is best indicator of this).
+
 (Part 1 - TAB Method only)
 1. Click the TAB button, to load the next section of games.
 2. Wait until next section has finished loading (scrollbar is best indicator of this).
 3. Click the TAB button again (wait & repeat) until it becomes a SAVE button.
+
 (Part 1 - LOAD Method only)
 1. Click the LOAD button.
 2. Wait until all game sections have finished loading (scrollbar is best indicator of this).
+
 (Part 1 - TAB or LOAD Method)
 1. Check all sections have loaded, and manually scroll if not.
 2. Click the SAVE button to save the web page of games to file.
