@@ -22,14 +22,15 @@
 
 _Singleton("get-game-titles-timboli")
 
-Global $a, $array, $date, $drop, $exists, $found, $game, $gamelist, $games, $gamesfile, $i, $inifle, $line, $new, $oldlist
-Global $path, $s, $sect, $target, $tot, $version, $webpage
+Global $a, $array, $date, $drop, $exists, $found, $game, $gamelist, $games, $gamesfile, $i, $inifle, $last, $line, $new
+Global $oldlist, $path, $r, $read, $s, $sect, $target, $templist, $tot, $version, $webpage
 
 $gamelist = @ScriptDir & "\Games.txt"
 $gamesfile = @ScriptDir & "\Games.ini"
 $inifle = @ScriptDir & "\Settings.ini"
 $oldlist = @ScriptDir & "\Oldgames.txt"
-$version = "v1.2"
+$templist = @ScriptDir & "\List.txt"
+$version = "v1.3"
 ; April 2021
 
 $games = ""
@@ -49,8 +50,8 @@ EndIf
 Exit
 
 Func DropBox()
-	Local $Button_display, $Button_go, $Button_list, $Item_one, $Label_drop, $Label_status, $Menu_go
-	Local $atts, $DropboxGUI, $left, $onetab, $srcfle, $style, $top, $winpos
+	Local $Button_display, $Button_go, $Combo_list, $Item_one, $Label_drop, $Label_status, $Menu_go
+	Local $atts, $DropboxGUI, $left, $list, $lists, $listfle, $onetab, $srcfle, $style, $top, $winpos
 	;
 	$left = IniRead($inifle, "Program Window", "left", -1)
 	$top = IniRead($inifle, "Program Window", "top", -1)
@@ -72,9 +73,8 @@ Func DropBox()
 	GUICtrlSetFont($Button_display, 7, 600, 0, "Small Fonts")
 	GUICtrlSetTip($Button_display, "Display the list of titles!")
 	;
-	$Button_list = GUICtrlCreateButton("Titles List", 81, 132, 70, 23)
-	GUICtrlSetFont($Button_list, 7, 600, 0, "Small Fonts")
-	GUICtrlSetTip($Button_list, "View the Titles List file!")
+	$Combo_list = GUICtrlCreateCombo("", 81, 133, 70, 21)
+	GUICtrlSetTip($Combo_list, "View a List file!")
 	;
 	$Button_go = GUICtrlCreateButton("GO", 160, 132, 52, 23)
 	GUICtrlSetFont($Button_go, 7, 600, 0, "Small Fonts")
@@ -85,6 +85,9 @@ Func DropBox()
 	$Item_one = GUICtrlCreateMenuItem("One TAB", $Menu_go, -1, 0)
 	;
 	; SETTINGS
+	$lists = "||Titles List|Removed|Added"
+	GUICtrlSetData($Combo_list, $lists, "")
+	;
 	$onetab = IniRead($inifle, "GO Button", "one_tab", "")
 	If $onetab = "" Then
 		$onetab = 4
@@ -139,9 +142,6 @@ Func DropBox()
 					GUICtrlSetData($Label_drop, $target)
 					GUICtrlSetBkColor($Label_drop, $COLOR_BLUE)
 				EndIf
-			Case $msg = $Button_list
-				; View the Titles List file
-				If FileExists($gamelist) Then ShellExecute($gamelist)
 			Case $msg = $Button_go
 				; Go to Games page at ZOOM Platform
 				$buttxt = GUICtrlRead($Button_go)
@@ -220,6 +220,60 @@ Func DropBox()
 			Case $msg = $Button_display
 				; Display the list of titles
 				DisplayTitles()
+			Case $msg = $Combo_list
+				; View a List file
+				$list = GUICtrlRead($Combo_list)
+				If $list <> "" Then
+					If $list = "Titles List" Then
+						; View the Titles List file
+						$listfle = $gamelist
+					Else
+						If FileExists($gamesfile) Then
+							SplashTextOn("", "Please Wait!", 140, 100, Default, Default, 33)
+							$listfle = $templist
+							$games = ""
+							_FileCreate($templist)
+							$read = FileRead($gamesfile)
+							$read = StringSplit($read, "[", 1)
+							For $r = 2 To $read[0]
+								$sect = $read[$r]
+								$game = StringSplit($sect, "]", 1)
+								$game = $game[1]
+								$date = StringSplit($sect, "date=", 1)
+								$date = $date[2]
+								$date = StringStripWS($date, 3)
+								If $list = "Removed" Then
+									; View the Removed List
+									$last = IniRead($inifle, "Last Checked", "date", "")
+									If StringInStr($date, $last) < 1 Then
+										$game = $game & " - " & $date & @CRLF
+										If $games = "" Then
+											$games = $game
+										Else
+											$games = $games & $game
+										EndIf
+									EndIf
+								ElseIf $list = "Added" Then
+									; View the Added List
+									If StringInStr($date, " (") < 1 Then
+										$game = $game & " - " & $date & @CRLF
+										If $games = "" Then
+											$games = $game
+										Else
+											$games = $games & $game
+										EndIf
+									EndIf
+								EndIf
+							Next
+							;MsgBox(262144, "$games", $games)
+							FileWrite($listfle, $games)
+							SplashOff()
+						Else
+							ContinueLoop
+						EndIf
+					EndIf
+					If FileExists($listfle) Then ShellExecute($listfle)
+				EndIf
 			Case $msg = $Item_one
 				; GO Button - One TAB
 				If $onetab = 4 Then

@@ -61,8 +61,12 @@ The DISPLAY button on the dropbox, opens the 'Games.ini' file in the Display Vie
 
 The date in the DATE column of the Display Viewer, is also a way of checking for games that no longer exist at the the ZOOM Platform.
 
-The 'Titles List' button opens the 'Games.txt' file in your default text file viewer (i.e. Notepad).
+The 'Titles List' option opens the 'Games.txt' file in your default text file viewer (i.e. Notepad).
 The entries in the 'Games.txt' file will always be in complete alphanumeric order, but the most recent game title additions, will have the text ' (NEW)' after the name, which you can easily search for.
 Game titles no longer existing at the ZOOM Platform, won't appear in this file.
 
 ZOOM Checker.exe can also be used from the command-line, so you could create a Registry right-click entry for it with HTML files if you wished, instead of using drag & drop with the floating dropbox.
+
+v1.3 Update Notes
+-----------------
+The 'Titles List' button has been changed to a combo (dropdown) field, with three viewing options. The first (Titles List) is for the 'Game.txt' file. The other two options are for viewing text files created on-the-fly, to display games removed or added to the ZOOM Platform since last check.
