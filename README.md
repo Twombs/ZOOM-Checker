@@ -80,8 +80,8 @@ First row entry is the number of game titles listed. Last row entry is the numbe
 The date in the DATE column of the Display Viewer, is also a way of checking for games that no longer exist at the ZOOM Platform.
 
 The 'Titles List' option opens the 'Games.txt' file in your default text file viewer (i.e. Notepad).
-!The 'Removed' games option opens the 'List.txt' file in your default text file viewer.
-!The 'Added' games option opens the 'List.txt' file in your default text file viewer.
+#####The 'Removed' games option opens the 'List.txt' file in your default text file viewer.
+#####!The 'Added' games option opens the 'List.txt' file in your default text file viewer.
 
 Entries in the 'Games.txt' file will always be in complete alphanumeric order, but most recent game title additions, will have the text '(NEW)' after the name, which you can easily search for.
 
