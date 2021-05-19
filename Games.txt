@@ -28,8 +28,8 @@ Aliens Vs. Predator Gold Edition
 American McGee's Grimm - Complete Edition
 Amerzone: The Explorer's Legacy
 Apache Longbow
-Arthur's Knights II: The Secret of Merlin (NEW)
-Arthur's Knights: Tales of Chivalry (NEW)
+Arthur's Knights II: The Secret of Merlin
+Arthur's Knights: Tales of Chivalry
 Ascension To The Throne
 Atlantis I: The Lost Tales
 Atlantis II: Beyond Atlantis
@@ -37,11 +37,11 @@ Atlantis III: The New World
 Atlantis: Evolution
 Back to Bed
 Bio Menace
-Black Moon Chronicles (NEW)
+Black Moon Chronicles
 Blackguards 2
 Blackguards: Special Edition
 Blackguards: Untold Legends DLC
-BLACKHOLE: Complete Edition (NEW)
+BLACKHOLE: Complete Edition
 Blake Stone: Aliens of Gold
 Blake Stone: Planet Strike
 BloodRayne 1
@@ -72,7 +72,7 @@ Construct - Escape the System
 Copperbell
 Cosmo's Cosmic Adventure
 Creatures: Exodus
-Creatures: The Albian Years (NEW)
+Creatures: The Albian Years
 Creatures: Village
 Crystal Caves
 CT Special Forces: Fire For Effect
@@ -86,7 +86,7 @@ Death Rally
 Death To Spies Gold Edition
 Death Track: Resurrection
 Deep Eclipse: New Space Odyssey
-Deep Sky Derelicts: Definitive Edition (NEW)
+Deep Sky Derelicts: Definitive Edition
 Deepica
 Defender Of The Crown
 Deponia
@@ -95,7 +95,7 @@ Deponia 3: Goodbye Deponia
 Deponia 4: Deponia Doomsday
 Desert Law
 Desert Thunder
-Devil's Hunt (NEW)
+Devil's Hunt
 Dinosaur Adventure
 Doodle Devil
 Doodle God
@@ -130,13 +130,13 @@ Empire Earth 3
 Empire Of The Ants
 Enclave
 Escape The Past
-Eternity: The Last Unicorn (NEW)
+Eternity: The Last Unicorn
 Evil Genius
 Expendable
 Fables Interactives
 Faces Of War
-Fairy Tale
 Fall of Light
+Fall of the New Age - Premium Edition
 Fallen Haven: Liberation Day
 Fantasy Wars
 Fleet Command
@@ -173,6 +173,7 @@ Hyper Fighters
 I.G.I. 2: Covert Strike
 IL-2 Sturmovik 1946: Ultimate Edition
 Imperial Glory
+In Fear I Trust: Episodes 1-4 Collection
 Incoming Double Pack
 Incoming Trilogy
 Iron Storm
@@ -207,7 +208,7 @@ Lemuria - Lost In Space
 Litil Divil
 Lords Of Magic: Special Edition
 Lords Of The Realm 3
-Lords of the Realm: Royal Edition (NEW)
+Lords of the Realm: Royal Edition
 Lucius
 M4 Tank Brigade
 Madness of the Architect
@@ -240,6 +241,8 @@ Moto Racer 3 - Gold Edition
 Moto Racer: 15th Anniversary - Gold Edition
 Mr. Travel
 My Puzzles
+Mystery Castle: The Mirror's Secret
+Namariel Legends: Iron Lord - Premium Edition
 Naval Warfare
 Necronomicon - The Dawning of Darkness
 NecroVisioN: Hardcore Edition (Original + Lost Company)
@@ -251,8 +254,8 @@ Oddworld: Abe's Exoddus
 Oddworld: Abe's Oddysee
 Oddworld: Munch's Oddysee
 Oddworld: New 'n' Tasty
-Oddworld: New 'n' Tasty: Alf's Escape
-Oddworld: New 'n' Tasty: Scrub Abe
+Oddworld: New 'n' Tasty: Alf's Escape DLC (NEW)
+Oddworld: New 'n' Tasty: Scrub Abe DLC (NEW)
 Oddworld: Stranger's Wrath HD
 Odysseus: Long Way Home
 Off-Road Drive
@@ -278,10 +281,10 @@ Plumeboom: The First Chapter
 Post Mortem
 POSTAL 1: Classic and Uncut
 POSTAL 2: COMPLETE
+POSTAL 2: Paradise Lost (DLC) (NEW)
 Praetorians
 Pressure
 Puzzleventure FIRE
-Quantum Replica
 Race Driver: GRID
 Radar Chaos
 Radar Chaos - Hawaii Edition
@@ -294,6 +297,7 @@ Realms Of The Haunting
 Realpolitiks
 Realpolitiks - New Power (DLC)
 Reign: Conflict of Nations 
+Renoir
 Return to Mysterious Island
 Return to Mysterious Island 2
 Rig N' Roll
@@ -306,7 +310,7 @@ ROOMS: The Toymaker's Mansion
 Rush For Glory
 Sea Dogs
 Sea Dogs: Caribbean Tales
-Sea Dogs: City of Abandoned Ships (NEW)
+Sea Dogs: City of Abandoned Ships
 Sea Legends Phantasmal Light: Collector's Edition
 Secret Agent
 Sensible Soccer 2006
@@ -345,6 +349,7 @@ Syberia 1
 Syberia 2
 Terminal Velocity
 Terra Lander Remastered
+The Book of Desires
 The Chronicles of Emerland Solitaire
 The Enthralling Realms: The Blacksmiths Revenge
 The Great Unknown: Houdini's Castle
@@ -361,8 +366,8 @@ Total Annihilation: Commander Pack
 Total Annihilation: Kingdoms + Iron Plague
 Transcripted
 TrickStyle
+Twilight City: Love As A Cure
 Two Worlds Epic Edition
-UFO: Afterlight
 UFO: Aftermath
 UFO: Aftershock
 Undersea Adventure
@@ -376,6 +381,7 @@ Warm Up !
 Warzone 2100
 Whispering Willows
 Wings (Emulated Amiga Edition)
+Witch's Pranks: Frog's Fortune - Collector's Edition (NEW)
 WolfPack: Gold Edition
 Wooden Floor
 World War I
