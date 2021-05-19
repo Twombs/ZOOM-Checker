@@ -1,7 +1,7 @@
 # ZOOM-Checker
 Extract game titles from a saved ZOOM Platform web page.
 
-![zoomcheck_dropbox_1](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_1.png?raw=true)
+![zoomcheck_dropbox_7](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_7.png?raw=true)
 
 The ZOOM Platform previously had no easy way to determine what games have been recently added. 'News' page now show this.
 
@@ -79,7 +79,7 @@ First row entry is the number of game titles listed. Last row entry is the numbe
 
 The date in the DATE column of the Display Viewer, is also a way of checking for games that no longer exist at the ZOOM Platform.
 
-The 'Titles List' button opens the 'Games.txt' file in your default text file viewer (i.e. Notepad).
+The 'Titles List' option opens the 'Games.txt' file in your default text file viewer (i.e. Notepad).
 
 Entries in the 'Games.txt' file will always be in complete alphanumeric order, but most recent game title additions, will have the text '(NEW)' after the name, which you can easily search for.
 
