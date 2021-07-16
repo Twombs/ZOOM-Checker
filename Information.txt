@@ -3,6 +3,8 @@ The ZOOM Platform currently has no easy way to determine what games have been re
 
 ZOOM Checker.exe has been developed for that shortfall.
 
+See the update version history at the end of this text file.
+
 HOW TO USE
 ----------
 (Part 1 - Original Method)
@@ -30,6 +32,7 @@ If 'One TAB' is not enabled, then right-click the GO button and enable that opti
 (Part 1 - TAB or LOAD Method)
 1. Check all sections have loaded, and manually scroll if not.
 2. Click the SAVE button to save the web page of games to file.
+NOTES - A READ button state is now also available. See the version (v1.4) notes at the end of this text file. To gain access to READ, you need to have set a save folder path and enabled its use, and then you no longer need to continue on to Part 2, because you can click the READ button instead.
 
 (Part 2)
 1. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
@@ -67,6 +70,12 @@ Game titles no longer existing at the ZOOM Platform, won't appear in this file.
 
 ZOOM Checker.exe can also be used from the command-line, so you could create a Registry right-click entry for it with HTML files if you wished, instead of using drag & drop with the floating dropbox.
 
+-----------------------------------------------------------
+
 v1.3 Update Notes
 -----------------
 The 'Titles List' button has been changed to a combo (dropdown) field, with three viewing options. The first (Titles List) is for the 'Game.txt' file. The other two options are for viewing text files created on-the-fly, to display games removed or added to the ZOOM Platform since last check.
+
+v1.4 Update Notes
+-----------------
+The GO button now has another state - READ. It also has a SETTINGS window, accessed via that entry in the combo dropdown field. On the SETTINGS window, you can now specify a save folder path, and enable some further automation with some of the other options. Maximum limited automation can be achieved by also specifying the Save Dialog window title. For me that title with Chrome is 'Save As'. See basic instructions via the 'I' (Information) button on the SETTINGS window. You will still need to manually click the SAVE button on the Save Dialog window, but at least you no longer need to browse to the save folder. With the READ button, you also no longer need to use drag & drop if the save folder path and 'Zoom Platform.html' file exists in that folder. NOTE - For the READ button to appear as a state, you need to have set the save folder path, and enabled its use. If enabled, the full save folder and file name are also always copied to the clipboard, even with maximum automation.

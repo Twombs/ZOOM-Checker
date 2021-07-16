@@ -16,6 +16,7 @@ AIM 1
 AIM 2: Clan Wars
 AIM Racing
 Airport Madness - World Edition
+Alekhine's Gun
 Alien Disco Safari
 Alien Hallway
 Alien Shooter 1 + Expansions
@@ -40,7 +41,7 @@ Bio Menace
 Black Moon Chronicles
 Blackguards 2
 Blackguards: Special Edition
-Blackguards: Untold Legends DLC
+Blackguards: Untold Legends (DLC)
 BLACKHOLE: Complete Edition
 Blake Stone: Aliens of Gold
 Blake Stone: Planet Strike
@@ -71,6 +72,7 @@ Conspiracy - KGB
 Construct - Escape the System
 Copperbell
 Cosmo's Cosmic Adventure
+Counter Action
 Creatures: Exodus
 Creatures: The Albian Years
 Creatures: Village
@@ -131,6 +133,7 @@ Empire Of The Ants
 Enclave
 Escape The Past
 Eternity: The Last Unicorn
+Eurofighter Typhoon
 Evil Genius
 Expendable
 Fables Interactives
@@ -198,7 +201,6 @@ KnightShift
 Konung 2: Blood of Titans
 Konung 3: Ties of the Dynasty
 Konung: Legend of the North
-League of Mermaids
 Legacy: Witch Island 2
 Legacy: Witch Island Origin
 Leisure Suit Larry 1-6 Collection (+ Softporn Adventure)
@@ -254,8 +256,8 @@ Oddworld: Abe's Exoddus
 Oddworld: Abe's Oddysee
 Oddworld: Munch's Oddysee
 Oddworld: New 'n' Tasty
-Oddworld: New 'n' Tasty: Alf's Escape DLC (NEW)
-Oddworld: New 'n' Tasty: Scrub Abe DLC (NEW)
+Oddworld: New 'n' Tasty: Alf's Escape (DLC)
+Oddworld: New 'n' Tasty: Scrub Abe (DLC)
 Oddworld: Stranger's Wrath HD
 Odysseus: Long Way Home
 Off-Road Drive
@@ -279,9 +281,10 @@ Planet Alcatraz
 Planets Under Attack
 Plumeboom: The First Chapter
 Post Mortem
-POSTAL 1: Classic and Uncut
-POSTAL 2: COMPLETE
-POSTAL 2: Paradise Lost (DLC) (NEW)
+POSTAL 1+2: YOUR MOM'S BOXSET
+POSTAL 2: Fudge Pack
+POSTAL 2: Paradise Lost (DLC)
+POSTAL: Classic and Uncut
 Praetorians
 Pressure
 Puzzleventure FIRE
@@ -357,7 +360,6 @@ The I of the Dragon
 The Night Of The Rabbit
 The Surprising Adventures of Munchausen
 The Tomorrow War
-The Watchmaker
 Theatre of War
 Theatre of War 3: Korea
 Thunder Brigade
@@ -381,7 +383,7 @@ Warm Up !
 Warzone 2100
 Whispering Willows
 Wings (Emulated Amiga Edition)
-Witch's Pranks: Frog's Fortune - Collector's Edition (NEW)
+Witch's Pranks: Frog's Fortune - Collector's Edition
 WolfPack: Gold Edition
 Wooden Floor
 World War I

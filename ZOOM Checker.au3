@@ -22,15 +22,16 @@
 
 _Singleton("get-game-titles-timboli")
 
-Global $a, $array, $date, $drop, $exists, $found, $game, $gamelist, $games, $gamesfile, $i, $inifle, $last, $line, $new
-Global $oldlist, $path, $r, $read, $s, $sect, $target, $templist, $tot, $version, $webpage
+Global $a, $array, $clip, $date, $drop, $DropboxGUI, $exists, $found, $game, $gamelist, $games, $gamesfile, $i, $inifle
+Global $last, $left, $line, $new, $oldlist, $path, $r, $read, $s, $savfold, $savpth, $sect, $style, $target, $templist
+Global $top, $tot, $usepth, $version, $webpage, $wintit
 
 $gamelist = @ScriptDir & "\Games.txt"
 $gamesfile = @ScriptDir & "\Games.ini"
 $inifle = @ScriptDir & "\Settings.ini"
 $oldlist = @ScriptDir & "\Oldgames.txt"
 $templist = @ScriptDir & "\List.txt"
-$version = "v1.3"
+$version = "v1.4"
 ; April 2021
 
 $games = ""
@@ -51,20 +52,20 @@ Exit
 
 Func DropBox()
 	Local $Button_display, $Button_go, $Combo_list, $Item_one, $Label_drop, $Label_status, $Menu_go
-	Local $atts, $DropboxGUI, $left, $list, $lists, $listfle, $onetab, $srcfle, $style, $top, $winpos
+	Local $atts, $list, $lists, $listfle, $onetab, $srcfle, $winpos
 	;
 	$left = IniRead($inifle, "Program Window", "left", -1)
 	$top = IniRead($inifle, "Program Window", "top", -1)
 	$style = $WS_CAPTION + $WS_POPUP + $WS_CLIPSIBLINGS + $WS_SYSMENU
-	$DropboxGUI = GUICreate("ZOOM Checker  " & $version, 215, 160, $left, $top, $style, $WS_EX_TOPMOST + $WS_EX_ACCEPTFILES)
+	$DropboxGUI = GUICreate("ZOOM Checker  " & $version, 225, 160, $left, $top, $style, $WS_EX_TOPMOST + $WS_EX_ACCEPTFILES)
 	;
 	; CONTROLS
-	$Label_drop = GUICtrlCreateLabel($target, 1, 1, 213, 107, $SS_CENTER)
+	$Label_drop = GUICtrlCreateLabel($target, 1, 1, 223, 107, $SS_CENTER)
 	GUICtrlSetFont($Label_drop, 9, 600)
 	GUICtrlSetState($Label_drop, $GUI_DROPACCEPTED)
 	GUICtrlSetTip($Label_drop, "Drag & Drop saved ZOOM Platform web page file here!")
 	;
-	$Label_status = GUICtrlCreateLabel("Click GO to go to the Games web page", 1, 108, 213, 18, $SS_CENTER + $SS_CENTERIMAGE)
+	$Label_status = GUICtrlCreateLabel("Click GO to go to the Games web page", 1, 108, 223, 18, $SS_CENTER + $SS_CENTERIMAGE)
 	GUICtrlSetFont($Label_status, 7, 600, 0, "Small Fonts")
 	GUICtrlSetBkColor($Label_status, $COLOR_LIME)
 	GUICtrlSetColor($Label_status, $COLOR_BLACK)
@@ -73,10 +74,10 @@ Func DropBox()
 	GUICtrlSetFont($Button_display, 7, 600, 0, "Small Fonts")
 	GUICtrlSetTip($Button_display, "Display the list of titles!")
 	;
-	$Combo_list = GUICtrlCreateCombo("", 81, 133, 70, 21)
+	$Combo_list = GUICtrlCreateCombo("", 81, 133, 80, 21)
 	GUICtrlSetTip($Combo_list, "View a List file!")
 	;
-	$Button_go = GUICtrlCreateButton("GO", 160, 132, 52, 23)
+	$Button_go = GUICtrlCreateButton("GO", 170, 132, 52, 23)
 	GUICtrlSetFont($Button_go, 7, 600, 0, "Small Fonts")
 	GUICtrlSetTip($Button_go, "Go to Games page at ZOOM Platform!")
 	;
@@ -85,7 +86,7 @@ Func DropBox()
 	$Item_one = GUICtrlCreateMenuItem("One TAB", $Menu_go, -1, 0)
 	;
 	; SETTINGS
-	$lists = "||Titles List|Removed|Added"
+	$lists = "||SETTINGS|Titles List|Removed|Added"
 	GUICtrlSetData($Combo_list, $lists, "")
 	;
 	$onetab = IniRead($inifle, "GO Button", "one_tab", "")
@@ -94,6 +95,20 @@ Func DropBox()
 		IniWrite($inifle, "GO Button", "one_tab", $onetab)
 	EndIf
 	GUICtrlSetState($Item_one, $onetab)
+	;
+	$savfold = IniRead($inifle, "SAVE", "path", "")
+	$usepth = IniRead($inifle, "SAVE", "use_path", "")
+	If $usepth = "" Or $savfold = "" Then
+		$usepth = 4
+		IniWrite($inifle, "SAVE", "use_path", $usepth)
+	EndIf
+	;
+	$wintit = IniRead($inifle, "Save Dialog", "title", "")
+	$clip = IniRead($inifle, "Save Dialog", "clipboard", "")
+	If $clip = "" Then
+		$clip = 4
+		IniWrite($inifle, "Save Dialog", "clipboard", $clip)
+	EndIf
 	;
 	; Testing
 	;GUICtrlSetData($Label_status, "Please wait for all pages to fully load")
@@ -160,6 +175,10 @@ Func DropBox()
 						GUICtrlSetData($Button_go, "SAVE")
 						GUICtrlSetBkColor($Label_status, $COLOR_FUCHSIA)
 						GUICtrlSetData($Label_status, "Click SAVE to save the web page")
+					ElseIf $buttxt = "SAVE" And $usepth = 1 Then
+						GUICtrlSetData($Button_go, "READ")
+						GUICtrlSetBkColor($Label_status, $COLOR_MONEYGREEN)
+						GUICtrlSetData($Label_status, "Click READ to parse the saved web page")
 					Else
 						GUICtrlSetData($Button_go, "GO")
 						GUICtrlSetBkColor($Label_status, $COLOR_LIME)
@@ -214,6 +233,46 @@ Func DropBox()
 				ElseIf $buttxt = "SAVE" Then
 					WinActivate("Zoom Platform", "")
 					Send("^s")
+					If $usepth = 1 And FileExists($savfold) Then
+						$savpth = $savfold & "\Zoom Platform.html"
+						ClipPut($savpth)
+						If $wintit <> "" And $clip = 4 Then
+							BlockInput(1)
+							WinWaitActive($wintit, "", 7)
+							If WinExists($wintit, "") Then
+								WinActivate($wintit, "")
+								Send($savpth)
+							EndIf
+							BlockInput(0)
+						;Else
+						;	ClipPut($savpth)
+						EndIf
+						GUICtrlSetData($Button_go, "READ")
+						GUICtrlSetBkColor($Label_status, $COLOR_MONEYGREEN)
+						GUICtrlSetData($Label_status, "Click READ to parse the saved web page")
+					Else
+						GUICtrlSetBkColor($Label_status, $COLOR_SKYBLUE)
+						GUICtrlSetData($Label_status, "CTRL with button click changes state")
+					EndIf
+				ElseIf $buttxt = "READ" Then
+					If FileExists($savfold) Then
+						$webpage = $savfold & "\Zoom Platform.html"
+						If FileExists($webpage) Then
+							GUICtrlSetBkColor($Label_drop, $COLOR_RED)
+							GUICtrlSetData($Label_drop, @LF & @LF & @LF & "Please Wait")
+							ExtractTitles("drop")
+							GUICtrlSetBkColor($Label_drop, $COLOR_GREEN)
+							GUICtrlSetData($Label_drop, @LF & @LF & @LF & "Display Viewer")
+							DisplayTitles("drop")
+							GUICtrlSetData($Label_drop, $target)
+							GUICtrlSetBkColor($Label_drop, $COLOR_BLUE)
+						Else
+							MsgBox(262192, "Read Error", "Saved web page file not found!", 0, $DropboxGUI)
+						EndIf
+					Else
+						MsgBox(262192, "Read Error", "Save folder path does not exist!", 0, $DropboxGUI)
+					EndIf
+					;
 					GUICtrlSetBkColor($Label_status, $COLOR_SKYBLUE)
 					GUICtrlSetData($Label_status, "CTRL with button click changes state")
 				EndIf
@@ -224,55 +283,60 @@ Func DropBox()
 				; View a List file
 				$list = GUICtrlRead($Combo_list)
 				If $list <> "" Then
-					If $list = "Titles List" Then
-						; View the Titles List file
-						$listfle = $gamelist
+					If $list = "SETTINGS" Then
+						SettingsGUI()
+						GUICtrlSetData($Combo_list, $lists, "")
 					Else
-						If FileExists($gamesfile) Then
-							SplashTextOn("", "Please Wait!", 140, 100, Default, Default, 33)
-							$listfle = $templist
-							$games = ""
-							_FileCreate($templist)
-							$read = FileRead($gamesfile)
-							$read = StringSplit($read, "[", 1)
-							For $r = 2 To $read[0]
-								$sect = $read[$r]
-								$game = StringSplit($sect, "]", 1)
-								$game = $game[1]
-								$date = StringSplit($sect, "date=", 1)
-								$date = $date[2]
-								$date = StringStripWS($date, 3)
-								If $list = "Removed" Then
-									; View the Removed List
-									$last = IniRead($inifle, "Last Checked", "date", "")
-									If StringInStr($date, $last) < 1 Then
-										$game = $game & " - " & $date & @CRLF
-										If $games = "" Then
-											$games = $game
-										Else
-											$games = $games & $game
-										EndIf
-									EndIf
-								ElseIf $list = "Added" Then
-									; View the Added List
-									If StringInStr($date, " (") < 1 Then
-										$game = $game & " - " & $date & @CRLF
-										If $games = "" Then
-											$games = $game
-										Else
-											$games = $games & $game
-										EndIf
-									EndIf
-								EndIf
-							Next
-							;MsgBox(262144, "$games", $games)
-							FileWrite($listfle, $games)
-							SplashOff()
+						If $list = "Titles List" Then
+							; View the Titles List file
+							$listfle = $gamelist
 						Else
-							ContinueLoop
+							If FileExists($gamesfile) Then
+								SplashTextOn("", "Please Wait!", 140, 100, Default, Default, 33)
+								$listfle = $templist
+								$games = ""
+								_FileCreate($templist)
+								$read = FileRead($gamesfile)
+								$read = StringSplit($read, "[", 1)
+								For $r = 2 To $read[0]
+									$sect = $read[$r]
+									$game = StringSplit($sect, "]", 1)
+									$game = $game[1]
+									$date = StringSplit($sect, "date=", 1)
+									$date = $date[2]
+									$date = StringStripWS($date, 3)
+									If $list = "Removed" Then
+										; View the Removed List
+										$last = IniRead($inifle, "Last Checked", "date", "")
+										If StringInStr($date, $last) < 1 Then
+											$game = $game & " - " & $date & @CRLF
+											If $games = "" Then
+												$games = $game
+											Else
+												$games = $games & $game
+											EndIf
+										EndIf
+									ElseIf $list = "Added" Then
+										; View the Added List
+										If StringInStr($date, " (") < 1 Then
+											$game = $game & " - " & $date & @CRLF
+											If $games = "" Then
+												$games = $game
+											Else
+												$games = $games & $game
+											EndIf
+										EndIf
+									EndIf
+								Next
+								;MsgBox(262144, "$games", $games)
+								FileWrite($listfle, $games)
+								SplashOff()
+							Else
+								ContinueLoop
+							EndIf
 						EndIf
+						If FileExists($listfle) Then ShellExecute($listfle)
 					EndIf
-					If FileExists($listfle) Then ShellExecute($listfle)
 				EndIf
 			Case $msg = $Item_one
 				; GO Button - One TAB
@@ -287,6 +351,99 @@ Func DropBox()
 		EndSelect
 	WEnd
 EndFunc ;=> DropBox
+
+Func SettingsGUI()
+	Local $Button_info, $Button_path, $Checkbox_clip, $Checkbox_path, $Group_path, $Group_title, $Input_path, $Input_title
+	Local $pth, $Settings
+	;
+	$Settings = GUICreate("Settings", 225, 160, $left, $top, $style, $WS_EX_TOPMOST, $DropboxGUI)
+	;
+	; CONTROLS
+	$Group_path = GUICtrlCreateGroup("Save Path", 5, 5, 215, 70)
+	$Input_path = GUICtrlCreateInput("", 15, 23, 170, 20)
+	GUICtrlSetTip($Input_path, "The save path for the 'Zoom Platform.html' file!")
+	$Button_path = GUICtrlCreateButton("B", 190, 23, 20, 20)
+	GUICtrlSetFont($Button_path, 7, 600, 0, "Small Fonts")
+	GUICtrlSetTip($Button_path, "Browse to set the save path!")
+	$Checkbox_path = GUICtrlCreateCheckbox("Enable use of the stored save path", 22, 48, 190, 20)
+	GUICtrlSetTip($Checkbox_path, "Enable use of the save path with SAVE and READ!")
+	;
+	$Group_title = GUICtrlCreateGroup("Save Dialog Title", 5, 82, 215, 70)
+	$Input_title = GUICtrlCreateInput("", 15, 100, 170, 20)
+	GUICtrlSetTip($Input_title, "The title of the Save Dialog window!")
+	$Button_info = GUICtrlCreateButton("I", 190, 100, 20, 20)
+	GUICtrlSetFont($Button_info, 7, 600, 0, "Small Fonts")
+	GUICtrlSetTip($Button_info, "Information about saving!")
+	$Checkbox_clip = GUICtrlCreateCheckbox("Enable use of the clipboard instead", 22, 125, 190, 20)
+	GUICtrlSetTip($Checkbox_clip, "Enable use of the clipboard to paste the save path!")
+	;
+	; SETTINGS
+	GUICtrlSetData($Input_path, $savfold)
+	GUICtrlSetState($Checkbox_path, $usepth)
+	If $savfold = "" Then GUICtrlSetState($Checkbox_path, $GUI_DISABLE)
+	;
+	GUICtrlSetData($Input_title, $wintit)
+	GUICtrlSetState($Checkbox_clip, $clip)
+	If $clip = 1 Then GUICtrlSetState($Input_title, $GUI_DISABLE)
+
+	GUISetState(@SW_SHOW)
+	While True
+		$msg = GUIGetMsg()
+		Select
+			Case $msg = $GUI_EVENT_CLOSE
+				; Exit or Close window
+				$savfold = GUICtrlRead($Input_path)
+				IniWrite($inifle, "SAVE", "path", $savfold)
+				$wintit = GUICtrlRead($Input_title)
+				IniWrite($inifle, "Save Dialog", "title", $wintit)
+				;
+				GUIDelete($Settings)
+				ExitLoop
+			Case $msg = $Button_path
+				; Browse to set the save path
+				$pth = FileSelectFolder("Browse to select the Save folder path.", $savfold, 7, "", $Settings)
+				If Not @error And StringMid($pth, 2, 2) = ":\" Then
+					$savfold = $pth
+					GUICtrlSetData($Input_path, $savfold)
+					IniWrite($inifle, "SAVE", "path", $savfold)
+					GUICtrlSetState($Checkbox_path, $GUI_ENABLE)
+				EndIf
+			Case $msg = $Button_info
+				; Information about saving
+				MsgBox(262208 + 256, "Save Information", _
+					"Enabling some of the Save options can provide a degree" & @LF & _
+					"of automation when it comes to saving the web page. A" & @LF & _
+					"larger degree of automation is possible by supplying the" & @LF & _
+					"title of the popup 'Save As' dialog window as well. If you" & @LF & _
+					"want more control, you can elect to manually paste the" & @LF & _
+					"Save folder path and file name, into the 'Save As' dialog" & @LF & _
+					"window, which will have been automatically copied to" & @LF & _
+					"the clipboard for you." & @LF & @LF & _
+					"NOTE - Keyboard & Mouse are briefly disabled during" & @LF & _
+					"maximum automation, maybe up to several seconds.", 0, $Settings)
+			Case $msg = $Checkbox_path
+				; Enable use of the save path with SAVE and READ
+				If GUICtrlRead($Checkbox_path) = $GUI_CHECKED Then
+					$usepth = 1
+				Else
+					$usepth = 4
+				EndIf
+				IniWrite($inifle, "SAVE", "use_path", $usepth)
+			Case $msg = $Checkbox_clip
+				; Enable use of the clipboard to paste the save pat
+				If GUICtrlRead($Checkbox_clip) = $GUI_CHECKED Then
+					$clip = 1
+					GUICtrlSetState($Input_title, $GUI_DISABLE)
+				Else
+					$clip = 4
+					GUICtrlSetState($Input_title, $GUI_ENABLE)
+				EndIf
+				IniWrite($inifle, "Save Dialog", "clipboard", $clip)
+			Case Else
+				;
+		EndSelect
+	WEnd
+EndFunc ;=> SettingsGUI
 
 
 Func DisplayTitles($drop = "")
