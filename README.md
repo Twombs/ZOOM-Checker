@@ -25,7 +25,7 @@ ZOOM Checker.exe had been developed for that prior shortfall. Some features of t
 1. Start the 'ZOOM Checker.exe' program.
 2. (Optional) Click the dropdown combo field and select SETTINGS.
 3. (Optional) Browse and set a save folder path on the SETTINGS window.
-4. (Optional) Enable the save folder path usage.
+4. (Optional) Enable the save folder path usage. This makes the READ button state available.
 5. (Optional) Set your browser Save Dialog window title in that field (i.e Save As).
 6. (Optional) Close the SETTINGS window.
 
@@ -51,7 +51,8 @@ If 'One TAB' is not enabled, then right-click the GO button and enable that opti
 (Part 1 - TAB or LOAD process)
 1. Check all sections have loaded, and manually scroll if not.
 2. Click the SAVE button to save the web page of games to file.
-3. Go to Part 2 ... or Click the READ button (v1.4 only).
+3. When your browser 'Save Dialog' window appears, browse to set the download destination and click 'Save'. Some automation is available (v1.4 only).
+4. Go to Part 2 ... or Click the READ button (v1.4 only).
 
 ![zoomcheck_dropbox_2](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_2.png?raw=true)
 ![zoomcheck_dropbox_6](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_6.png?raw=true)
