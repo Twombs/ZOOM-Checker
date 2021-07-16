@@ -23,7 +23,7 @@ ZOOM Checker.exe had been developed for that prior shortfall. Some features of t
 1. Start the 'ZOOM Checker.exe' program.
 2. (Optional) Click the dropdown combo field and select SETTINGS.
 3. (Optional) Browse and set a save folder path on the SETTINGS window.
-4. (Optional) Enable the save folder path usage. This makes the READ button state available.
+4. (Optional) Enable the save folder path usage. This also makes the READ button state available.
 5. (Optional) Set your browser Save Dialog window title in that field (i.e Save As).
 6. (Optional) Close the SETTINGS window.
 
