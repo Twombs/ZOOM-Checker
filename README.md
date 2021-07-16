@@ -18,7 +18,7 @@ ZOOM Checker.exe had been developed for that prior shortfall. Some features of t
 6. Go to Part 2.
 
 ### (Part 1 - New Method)
-(Part 1 - TAB or LOAD process) (Optional) refers to v1.4 or newer.
+(Part 1 - TAB or LOAD process) - (Optional) refers to v1.4 or newer.
 
 1. Start the 'ZOOM Checker.exe' program.
 2. (Optional) Click the dropdown combo field and select SETTINGS.
@@ -49,8 +49,8 @@ If 'One TAB' is not enabled, then right-click the GO button and enable that opti
 (Part 1 - TAB or LOAD process)
 1. Check all sections have loaded, and manually scroll if not.
 2. Click the SAVE button to save the web page of games to file.
-3. When your browser 'Save Dialog' window appears, browse to set the download destination and click 'Save'. NOTE - Some automation is available (v1.4 only).
-4. Go to Part 2 ... or Click the READ button (v1.4 only).
+3. When your browser 'Save Dialog' window appears, browse to set the download destination and click 'Save'. NOTE - Some automation is available (v1.4 or newer only).
+4. Go to Part 2 ... or Click the READ button (v1.4 or newer only).
 
 ![zoomcheck_dropbox_2](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_2.png?raw=true)
 ![zoomcheck_dropbox_6](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_6.png?raw=true)
