@@ -50,7 +50,7 @@ If 'One TAB' is not enabled, then right-click the GO button and enable that opti
 1. Check all sections have loaded, and manually scroll if not.
 2. Click the SAVE button to save the web page of games to file.
 3. When your browser 'Save Dialog' window appears, browse to set the download destination and click 'Save'. NOTE - Some automation is available (v1.4 or newer only).
-4. Go to Part 2 ... or Click the READ button (v1.4 or newer only).
+4. Go to Part 2 ... or Click the READ button (v1.4 or newer only). READ processes (parses) 'Zoom Platform.html' and displays the result.
 
 ![zoomcheck_dropbox_2](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_2.png?raw=true)
 ![zoomcheck_dropbox_6](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_6.png?raw=true)
