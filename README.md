@@ -8,6 +8,8 @@ The ZOOM Platform previously had no easy way to determine what games have been r
 
 ZOOM Checker.exe had been developed for that prior shortfall. Some features of this program remain handy.
 
+(Optional) refers to v1.4 or newer.
+
 # HOW TO USE
 ### (Part 1 - Original Method)
 1. Go to the ZOOM Platform website.
@@ -26,6 +28,8 @@ ZOOM Checker.exe had been developed for that prior shortfall. Some features of t
 4. (Optional) Enable the save folder path usage.
 5. (Optional) Set your browser Save Dialog window title in that field (i.e Save As).
 6. (Optional) Close the SETTINGS window.
+
+![Zoomcheck_settings.png](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_settings.png?raw=true)
 
 (Part 1 - LOAD process only)
 
