@@ -82,4 +82,4 @@ The GO button now has another state - READ. It also has a SETTINGS window, acces
 
 v1.5 Update Notes
 -----------------
-BUGFIX fo games no longer being detected. Added more checking routines to avoid this going undetected again (oops). The 'Games.ini' file gets backed up, overwriting last backup, each time the program extracts the latest listed games from the saved web page.
+BUGFIX for games no longer being detected. Added more checking routines to avoid this going undetected again (oops). The 'Games.ini' file gets backed up, overwriting the previous backup, each time the program extracts the latest listed games from the saved web page.
