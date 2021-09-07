@@ -5,6 +5,8 @@
 688(I) Hunter-Killer
 7.62 High Calibre
 A Boy And His Blob
+A.I.M 2 - Clan Wars (NEW)
+A.I.M Racing (NEW)
 Aboo
 Actua Golf 2
 Actua Ice Hockey 2
@@ -12,9 +14,6 @@ Actua Pool
 Actua Soccer 3
 Actua Tennis
 Advent Rising
-AIM 1
-AIM 2: Clan Wars
-AIM Racing
 Airport Madness - World Edition
 Alekhine's Gun
 Alien Disco Safari
@@ -24,20 +23,19 @@ Alien Shooter 2: Conscription
 Alien Shooter 2: Reloaded
 Alien Shooter: Revisited
 Alien Trilogy
-Aliens Vs. Predator Classic 2000
-Aliens Vs. Predator Gold Edition
+Aliens Versus Predator - Gold Edition (NEW)
+Aliens Versus Predator Classic 2000 (NEW)
 American McGee's Grimm - Complete Edition
 Amerzone: The Explorer's Legacy
 Apache Longbow
 Arthur's Knights II: The Secret of Merlin
 Arthur's Knights: Tales of Chivalry
 Ascension To The Throne
-Atlantis I: The Lost Tales
 Atlantis II: Beyond Atlantis
 Atlantis III: The New World
 Atlantis: Evolution
+Atlantis: The Lost Tales (NEW)
 Back to Bed
-Bio Menace
 Black Moon Chronicles
 Blackguards 2
 Blackguards: Special Edition
@@ -45,7 +43,7 @@ Blackguards: Untold Legends (DLC)
 BLACKHOLE: Complete Edition
 Blake Stone: Aliens of Gold
 Blake Stone: Planet Strike
-BloodRayne 1
+BloodRayne (NEW)
 BloodRayne 2
 BloodRayne: Betrayal
 Bomb The Monsters!
@@ -54,8 +52,7 @@ BorderZone
 Breezeblox
 Brigade E5: New Jagged Union
 Bug Adventure
-Calvin Tucker's Farm Animal Racing
-Cannon Fodder 1
+Cannon Fodder (NEW)
 Cannon Fodder 2
 Carefree Capers: Shaping Up!
 Casino Blackjack
@@ -67,7 +64,6 @@ Commandos 2: Men Of Courage
 Commandos 3: Destination Berlin
 Commandos: Behind Enemy Lines
 Commandos: Beyond The Call Of Duty
-Commandos: Strike Force
 Conspiracy - KGB
 Construct - Escape the System
 Copperbell
@@ -77,14 +73,12 @@ Creatures: Exodus
 Creatures: The Albian Years
 Creatures: Village
 Crystal Caves
-CT Special Forces: Fire For Effect
 Cuban Missile Crisis (Original + Ice Crusade)
 Curse - The Eye of Isis
 D: The Game
 Dangerous Waters
 Dawn Of Magic 2
-Dead Synchronicity
-Death Rally
+Dead Synchronicity - Tomorrow Comes Today (NEW)
 Death To Spies Gold Edition
 Death Track: Resurrection
 Deep Eclipse: New Space Odyssey
@@ -96,7 +90,6 @@ Deponia 2: Chaos On Deponia
 Deponia 3: Goodbye Deponia
 Deponia 4: Deponia Doomsday
 Desert Law
-Desert Thunder
 Devil's Hunt
 Dinosaur Adventure
 Doodle Devil
@@ -106,29 +99,26 @@ Doodle God: Alchemy Jam
 Doodle God: Fantasy World of Magic
 Doodle Kingdom
 Doodle Mafia
-Dracula 1: Resurrection
 Dracula 2: The Last Sanctuary
 Dracula 3: The Path Of The Dragon
 Dracula 4: The Shadow Of The Dragon
 Dracula 5: The Blood Legacy
-Dragon Lore I: The Legend Begins
+Dracula: Resurrection (NEW)
 Dragon Lore II: Heart Of The Dragon Man
+Dragon Lore: The Legend Begins (NEW)
 Dream Pinball 3D
 Dreamscapes - Nightmare's Heir
 Dreamscapes - The Sandman
-Duke Nukem 1
-Duke Nukem 2
-Duke Nukem 3D: Atomic Edition
-Duke Nukem: Manhattan Project
+Duke Nukem (NEW)
+Duke Nukem II (NEW)
 e-Racer
 Earth 2140 Trilogy
 Earth 2150 Trilogy
 East India Company - Designer's Cut
-El Matador
 Elven Legacy Collection
-Empire Earth 1 Gold Edition
-Empire Earth 2 Gold Edition
-Empire Earth 3
+Empire Earth - Gold Edition (NEW)
+Empire Earth II - Gold Edition (NEW)
+Empire Earth III (NEW)
 Empire Of The Ants
 Enclave
 Escape The Past
@@ -159,11 +149,10 @@ Gomo
 Gorky 17
 Great Battles Trilogy - Collector's Edition
 Green Ranch
-Ground Control 1 Anthology
 Ground Control 2: Operation Exodus Special Edition
+Ground Control Anthology (NEW)
 Guilty Gear Isuka
 Guilty Gear X2 #Reload
-Gun Metal
 Haegemonia: Gold Edition
 Haimrik
 Hard Truck 2: King of the Road
@@ -190,7 +179,6 @@ Judge Dredd: Dredd vs Death
 Kaan - Barbarian's Blade
 Ken Follett's The Pillars of the Earth - Complete Edition
 Kid's Zoo: A Baby Animal Adventure
-Killing Time
 King's Bounty: Armored Princess
 King's Bounty: Crossworlds GOTY Edition
 King's Bounty: Dark Side - Premium Edition
@@ -209,7 +197,7 @@ Leisure Suit Larry: Magna Cum Laude
 Lemuria - Lost In Space
 Litil Divil
 Lords Of Magic: Special Edition
-Lords Of The Realm 3
+Lords Of The Realm III (NEW)
 Lords of the Realm: Royal Edition
 Lucius
 M4 Tank Brigade
@@ -217,12 +205,11 @@ Madness of the Architect
 Mahjong Secrets
 Marcus Level
 Margot's Word Brain
-Marine Sharpshooter 2: Jungle Warfare
 Massive Assault
 Massive Assault - Phantom Renaissance
 Master Of Orion 1+2
 Master of Orion 3
-MegaRace 1
+MegaRace (NEW)
 MegaRace 2
 MegaRace 3
 Memoria
@@ -235,9 +222,8 @@ Midnight GT: Primary Racer
 Mini Metal
 Mobile Forces
 Monster Bash
-Monuments of Mars
 Moonbase Commander
-Moto Racer 1
+Moto Racer (NEW)
 Moto Racer 2
 Moto Racer 3 - Gold Edition
 Moto Racer: 15th Anniversary - Gold Edition
@@ -271,7 +257,7 @@ Parkan: Iron Strategy
 Pearl Diversion
 Perimeter
 Perimeter: Emperor's Testament
-Pilot Brothers 1
+Pilot Brothers (NEW)
 Pilot Brothers 2
 Pilot Brothers 3: Back Side Of The Earth
 Pinball Gold Pack
@@ -284,7 +270,7 @@ Post Mortem
 POSTAL 1+2: YOUR MOM'S BOXSET
 POSTAL 2: Fudge Pack
 POSTAL 2: Paradise Lost (DLC)
-POSTAL: Classic and Uncut
+Postal III (NEW)
 Praetorians
 Pressure
 Puzzleventure FIRE
@@ -303,7 +289,6 @@ Reign: Conflict of Nations
 Renoir
 Return to Mysterious Island
 Return to Mysterious Island 2
-Rig N' Roll
 Rise of the Triad: Dark War
 Robin Hood - The Legend of Sherwood
 Robin's Island Adventure
@@ -317,10 +302,10 @@ Sea Dogs: City of Abandoned Ships
 Sea Legends Phantasmal Light: Collector's Edition
 Secret Agent
 Sensible Soccer 2006
-Sensible World of Soccer 96/97
+Sensible World of Soccer 96-97 (NEW)
 Seven Kingdoms: Ancient Adversaries
 Shadow Tactics: Blades of the Shogun
-Shadow Warrior: Classic and Complete
+Shiny: Deluxe Edition (NEW)
 Ski Park Manager
 Slipstream 5000
 Sniper Elite: Berlin 1945
@@ -334,10 +319,9 @@ Space Rangers HD: A War Apart
 Space Rangers: Quest
 Spoiler Alert
 Stalingrad
-Star Wolves 1
+Star Wolves (NEW)
 Star Wolves 2
 Star Wolves 3: Civil War
-StarGunner
 State of Mind
 Still Life
 Still Life 2
@@ -348,7 +332,7 @@ Sudden Strike - Gold Edition
 Sudden Strike 2 - Gold Edition
 Sudden Strike 3 - Gold Edition
 Super Sonic Racer
-Syberia 1
+Syberia (NEW)
 Syberia 2
 Terminal Velocity
 Terra Lander Remastered
@@ -362,6 +346,7 @@ The Surprising Adventures of Munchausen
 The Tomorrow War
 Theatre of War
 Theatre of War 3: Korea
+Through The Woods: Collector's Edition (NEW)
 Thunder Brigade
 Top Trumps Turbo
 Total Annihilation: Commander Pack
@@ -370,6 +355,7 @@ Transcripted
 TrickStyle
 Twilight City: Love As A Cure
 Two Worlds Epic Edition
+UFO: Afterlight
 UFO: Aftermath
 UFO: Aftershock
 Undersea Adventure
@@ -380,7 +366,6 @@ WarBirds
 WarBirds: Dogfights
 WarBirds: Red Baron
 Warm Up !
-Warzone 2100
 Whispering Willows
 Wings (Emulated Amiga Edition)
 Witch's Pranks: Frog's Fortune - Collector's Edition
@@ -391,7 +376,7 @@ XIII
 XIII Century: Gold Edition
 Z: The Game
 Z2: Steel Soldiers
-Zombie Shooter 1
+Zombie Shooter (NEW)
 Zombie Shooter 2
 Zone Raiders
 Zou's App

@@ -31,8 +31,8 @@ $gamesfile = @ScriptDir & "\Games.ini"
 $inifle = @ScriptDir & "\Settings.ini"
 $oldlist = @ScriptDir & "\Oldgames.txt"
 $templist = @ScriptDir & "\List.txt"
-$version = "v1.4"
-; April 2021
+$version = "v1.5"
+; September 2021
 
 $games = ""
 If $CmdLine[0] = "" Then
@@ -499,6 +499,7 @@ Func ExtractTitles($drop = "")
 	_FileReadToArray($webpage, $array)
 	If IsArray($array) Then
 		If FileExists($gamelist) Then FileMove($gamelist, $oldlist, 1)
+		If FileExists($gamesfile) Then FileCopy($gamesfile, $gamesfile & ".bak", 1)
 		$date = _NowDate()
 		For $a = 1 To $array[0]
 			$line = $array[$a]
@@ -507,26 +508,33 @@ Func ExtractTitles($drop = "")
 				$game = $game[1]
 				$game =  StringSplit($game, '">', 1)
 				$game = $game[$game[0]]
-				If $game <> "" Then
-					$found = $found + 1
-					$exists = IniRead($gamesfile, $game, "date", "")
-					If $exists = "" Then
-						IniWrite($gamesfile, $game, "date", $date)
-						$new = " (NEW)"
-					Else
-						$exists = StringSplit($exists, " (", 1)
-						$exists = $exists[1]
-						If $exists <> $date Then
-							IniWrite($gamesfile, $game, "date", $exists & " (" & $date & ")")
-						EndIf
-						$new = ""
+			ElseIf StringInStr($line, '<span class="truncate" title="') > 0 Then
+				$game = StringSplit($line, '<span class="truncate" title="', 1)
+				$game = $game[2]
+				$game =  StringSplit($game, '">', 1)
+				$game = $game[1]
+				$game = StringReplace($game, "&#39;", "'")
+			EndIf
+			If $game <> "" Then
+				$found = $found + 1
+				$exists = IniRead($gamesfile, $game, "date", "")
+				If $exists = "" Then
+					IniWrite($gamesfile, $game, "date", $date)
+					$new = " (NEW)"
+				Else
+					$exists = StringSplit($exists, " (", 1)
+					$exists = $exists[1]
+					If $exists <> $date Then
+						IniWrite($gamesfile, $game, "date", $exists & " (" & $date & ")")
 					EndIf
-					If $games = "" Then
-						$games = $game & $new
-					Else
-						$games = $games & @CRLF & $game & $new
-					EndIf
+					$new = ""
 				EndIf
+				If $games = "" Then
+					$games = $game & $new
+				Else
+					$games = $games & @CRLF & $game & $new
+				EndIf
+				$game = ""
 			EndIf
 		Next
 		If $games <> "" Then
@@ -534,7 +542,11 @@ Func ExtractTitles($drop = "")
 			FileWrite($gamelist, $games)
 			IniWrite($inifle, "Last Checked", "date", $date)
 			IniWrite($inifle, "Games Found", "total", $found)
+		Else
+			MsgBox(262192, "Extract Error", "Could not detect any games!", 0, $DropboxGUI)
 		EndIf
+	Else
+		MsgBox(262192, "Read Error", "Could not create an array!", 0, $DropboxGUI)
 	EndIf
 	If $drop = "" Then SplashOff()
 EndFunc ;=> ExtractTitles
