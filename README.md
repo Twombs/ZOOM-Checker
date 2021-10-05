@@ -23,7 +23,9 @@ ZOOM Checker.exe had been developed for that prior shortfall. Some features of t
 4. (Optional) Enable the save folder path usage. This also makes the READ button state available.
 5. (Optional) Set your browser Save Dialog window title in that field (i.e Save As).
 6. (Optional) Close the SETTINGS window.
+
 ![Zoomcheck_settings.png](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_settings.png?raw=true)
+
 (Part 1 - LOAD process only)
 If 'One TAB' is not enabled, then right-click the GO button and enable that option.
 (Part 1 - TAB or LOAD process)
@@ -41,6 +43,7 @@ If 'One TAB' is not enabled, then right-click the GO button and enable that opti
 2. Click the SAVE button to save the web page of games to file. NOTE - Some automation is available (v1.4 or newer only).
 3. When your browser 'Save Dialog' window appears, browse (if no automation) to set the download destination, then click 'Save'.
 4. Go to Part 2 ... or Click the READ button (v1.4 or newer only). READ parses (processes) 'Zoom Platform.html' and displays the result.
+
 ![zoomcheck_dropbox_2](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_2.png?raw=true)
 ![zoomcheck_dropbox_6](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_6.png?raw=true)
 ![zoomcheck_dropbox_3](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_3.png?raw=true)
@@ -49,9 +52,11 @@ If 'One TAB' is not enabled, then right-click the GO button and enable that opti
 ### (Part 2)
 1. Drag & drop your saved file (Zoom Platform.html) onto the drop area of 'ZOOM Checker'.
 2. Wait while titles are being extracted and then displayed.
+
 ![zoomcheck_dropbox_4](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_4.png?raw=true)
 ![zoomcheck_dropbox_5](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_5.png?raw=true)
 ![zoomcheck_display](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_display.png?raw=true)
+
 # NOTES
 The 'ZOOM Checker' program is a floating dropbox, that will remember its screen position when closed.
 The 'ZOOM Checker' program creates two files - Games.txt and Games.ini.
