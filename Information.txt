@@ -82,4 +82,10 @@ The GO button now has another state - READ. It also has a SETTINGS window, acces
 
 v1.5 Update Notes
 -----------------
-BUGFIX for games no longer being detected. Added more checking routines to avoid this going undetected again (oops). The 'Games.ini' file gets backed up, overwriting the previous backup, each time the program extracts the latest listed games from the saved web page.
+BUGFIX fo games no longer being detected. Added more checking routines to avoid this going undetected again (oops). The 'Games.ini' file gets backed up, overwriting last backup, each time the program extracts the latest listed games from the saved web page.
+
+v1.6 Update Notes
+-----------------
+Major Update, with the program being completely re-worked.
+Program now has a full GUI window and full retrieval automation.
+This program downloads (checks for) a list of all games available at the ZOOM Platform store. It also keeps a record of important changes to a game (removal, rename, price). Results are displayed and can be sorted, with various indicators and options, including obtaining and exporting summary & image file for the selected game. Favorites and Ownership can be specified per game, including store name.
