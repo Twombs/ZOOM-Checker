@@ -22,7 +22,9 @@ It also keeps a record of important changes to a game (removal, rename, price).
 
 ![Zoomcheck_details](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/ZOOM_detail.png?raw=true)
 
-12. A log record is kept for some processes.
+12. Summary and Image file can be saved to a selected location (i.e. game folder).
+13. A log record is kept for some processes.
+14. Can go to the web page for the selected game with a button click.
 
 BIG THANKS to Adam @ ZOOM Platform for the 'CHECK' link.
 
