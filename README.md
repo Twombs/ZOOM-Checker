@@ -1,11 +1,9 @@
 # ZOOM-Checker
-Extract game titles from a saved ZOOM Platform web page.
+This program downloads (checks for) a list of all games available at the ZOOM Platform store.
 
-![zoomcheck_dropbox_7](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_7.png?raw=true)
-![zoomcheck_dropbox_8](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/Zoomcheck_dropbox_8.png?raw=true)
+![zoomcheck_gui](https://github.com/Twombs/ZOOM-Checker/blob/main/Screenshots/ZOOM_gui_3.png?raw=true)
 
-The ZOOM Platform previously had no easy way to determine what games have been recently added. 'News' page now show this.
-ZOOM Checker.exe had been developed for that prior shortfall. Some features of this program remain handy.
+It also keeps a record of important changes to a game (removal, rename, price).
 
 # HOW TO USE
 ### (Part 1 - Original Method)
