@@ -5,6 +5,17 @@ ZOOM Checker.exe has been developed for that shortfall.
 
 See the update version history at the end of this text file.
 
+LEGEND OF COLORS
+----------------
+Pale Pink and Pale Green are base row colors (odd & even row numbers).
+FUCHSIA (Pink) indicates a NEW game added to the list.
+OLIVE indicates a game not returned in last CHECK. Game may have been RENAMED or REMOVED by ZOOM.
+LIME (Green) indicates the game has DROPPED in price.
+RED indicates the game has INCREASED in price.
+YELLOW indicates the game has been marked as a FAVORITE.
+SKYBLUE indicates the game has been marked as OWNED, either at ZOOM or elsewhere.
+BLACK indicates a game has been marked for REMOVAL, but APPLY hasn't been clicked.
+
 HOW TO USE
 ----------
 (Part 1 - Original Method)
@@ -89,3 +100,7 @@ v1.6 Update Notes
 Major Update, with the program being completely re-worked.
 Program now has a full GUI window and full retrieval automation.
 This program downloads (checks for) a list of all games available at the ZOOM Platform store. It also keeps a record of important changes to a game (removal, rename, price). Results are displayed and can be sorted, with various indicators and options, including obtaining and exporting summary & image file for the selected game. Favorites and Ownership can be specified per game, including store name.
+
+v1.7 Update Notes
+-----------------
+Bugfix for unwanted spaces in a game name. LEGEND OF COLORS added near the start of this text file.

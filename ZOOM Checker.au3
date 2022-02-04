@@ -49,8 +49,8 @@ $savefile = @ScriptDir & "\Saved.html"
 $templist = @ScriptDir & "\List.txt"
 $zoomlist = @ScriptDir & "\Games.csv"
 
-$update = "(updated September 2021)"
-$version = "v1.6"
+$update = "(updated February 2022)"
+$version = "v1.7"
 
 If Not FileExists($images) Then DirCreate($images)
 
@@ -563,6 +563,7 @@ Func MainGUI()
 						If $line[0] = 4 Then
 							$game = $line[1]
 							$game = StringReplace($game, '"', '')
+							$game = StringStripWS($game, 7)
 							If $game <> "" Then
 								$released = $line[2]
 								$released = StringReplace($released, '"', '')
@@ -576,7 +577,7 @@ Func MainGUI()
 								$price = StringReplace($price, '"', '')
 								If $price = 0 Then $price = "0.00"
 								If $read = "" Then
-									; ADD game to list
+									; ADD game to list. List created for first time.
 									IniWrite($gamesfile, $game, "date", $date)
 									IniWrite($gamesfile, $game, "released", $released)
 									IniWrite($gamesfile, $game, "updated", $updated)
@@ -591,6 +592,7 @@ Func MainGUI()
 									$prior = $price
 									IniWrite($gamesfile, $game, "prior", $prior)
 								Else
+									; Check if game already exists on list.
 									If StringInStr($read, "[" & $game & "]") > 0 Then
 										; UPDATE game on list
 										$exists = IniRead($gamesfile, $game, "date", "")
@@ -1523,25 +1525,36 @@ Func LoadTheList()
 				$idx = GUICtrlCreateListViewItem($entry, $ListView_games)
 				$remove = IniRead($gamesfile, $game, "remove", "")
 				If $remove = 1 Then
+					; Game entry has been marked for removal.
 					$removals = $removals & $game & "|"
 					GUICtrlSetBkColor($idx, $COLOR_BLACK)
 				ElseIf StringInStr($date, " ") < 1 Then
+					; New entry.
 					If $last = $date Then
+						; Added on last CHECK date.
 						GUICtrlSetBkColor($idx, $COLOR_FUCHSIA)
 					Else
+						; Not detected on last CHECK. Game is either no longer available at ZP or has been renamed.
 						GUICtrlSetBkColor($idx, $COLOR_OLIVE)
 					EndIf
 				ElseIf $last <> $checked Then
+					; Not detected on last CHECK. Game is either no longer available at ZP or has been renamed.
 					GUICtrlSetBkColor($idx, $COLOR_OLIVE)
-				ElseIf $prior > $price Then
+				ElseIf Number($prior) > Number($price) Then
+					; Game has been discounted.
 					GUICtrlSetBkColor($idx, $COLOR_LIME)
-				ElseIf $prior < $price Then
+				ElseIf Number($prior) < Number($price) Then
+					; Game has been increased in price.
 					GUICtrlSetBkColor($idx, $COLOR_RED)
 				ElseIf $favorite <> "" Then
+					; Game is a favorite
 					GUICtrlSetBkColor($idx, $COLOR_YELLOW)
 				ElseIf $owned <> "" Then
+					; Game is owned at ZOOM Platform or elsewhere.
 					GUICtrlSetBkColor($idx, $COLOR_SKYBLUE)
 				Else
+					; No price change detected.
+					; Apply base color or alternate row base color.
 					If IsInt($idx / 2) = 1 Then GUICtrlSetBkColor($idx, 0xC0F0C0)
 				EndIf
 			EndIf
