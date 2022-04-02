@@ -28,13 +28,13 @@
 
 _Singleton("zoom-platform-checker-timboli")
 
-Global $Button_apply, $Button_check, $Button_detail, $Button_fav, $Button_info, $Button_log, $Button_own, $Button_quit
-Global $Button_save, $Button_web, $Combo_own, $Group_games, $Label_status, $ListView_games, $Radio_box, $Radio_gui
+Global $Button_apply, $Button_check, $Button_detail, $Button_fav, $Button_fold, $Button_info, $Button_log, $Button_own, $Button_quit
+Global $Button_save, $Button_shop, $Button_web, $Combo_own, $Group_games, $Label_status, $ListView_games, $Radio_box, $Radio_gui
 
 Global $a, $ans, $array, $blurb, $blurbs, $case, $checked, $CheckerGUI, $clip, $date, $detail, $drop, $e, $entries, $entry
 Global $exists, $favorite, $found, $game, $gamelist, $games, $gamesfile, $high, $i, $idx, $images, $imgfle, $inifle, $last
-Global $left, $line, $logfle, $low, $method, $new, $numb, $nums, $oldlist, $owned, $path, $ping, $price, $prior, $r, $read
-Global $remfile, $removals, $remove, $s, $savefile, $savpth, $sect, $start, $state, $style, $target, $templist, $title
+Global $left, $line, $logfle, $low, $method, $new, $numb, $nums, $oldlist, $owned, $part, $path, $ping, $price, $prior, $r
+Global $read, $remfile, $removals, $remove, $s, $savefile, $savpth, $sect, $start, $state, $style, $target, $templist, $title
 Global $top, $tot, $update, $usepth, $version, $webpage, $window, $wintit, $zoomfold, $zoomlist
 
 $blurbs = @ScriptDir & "\Blurbs.ini"
@@ -49,8 +49,8 @@ $savefile = @ScriptDir & "\Saved.html"
 $templist = @ScriptDir & "\List.txt"
 $zoomlist = @ScriptDir & "\Games.csv"
 
-$update = "(updated February 2022)"
-$version = "v1.7"
+$update = "(updated April 2022)"
+$version = "v1.8"
 
 If Not FileExists($images) Then DirCreate($images)
 
@@ -98,11 +98,11 @@ Exit
 Func MainGUI()
 	Local $Button_remove, $Group_method, $Group_status, $Input_dates, $Input_game
 	;
-	Local $added, $colnum, $dates, $download, $height, $icoI, $icoT, $icoW, $icoX, $imgurl, $ind, $lowid
+	Local $added, $colnum, $count, $dates, $download, $height, $icoI, $icoT, $icoW, $icoX, $imgurl, $ind, $lowid
 	Local $released, $revamp, $shell, $store, $stores, $updated, $URL, $user32, $width
 	;
 	$width = 870
-	$height = 405
+	$height = 410
 	$left = IniRead($inifle, "GUI Window", "left", @DesktopWidth - $width - 25)
 	$top = IniRead($inifle, "GUI Window", "top", @DesktopHeight - $height - 60)
 	$style = $WS_OVERLAPPED + $WS_CAPTION + $WS_SYSMENU + $WS_MINIMIZEBOX + $WS_VISIBLE ; + $WS_POPUP
@@ -153,44 +153,51 @@ Func MainGUI()
 	GUICtrlSetBkColor($Label_status, $COLOR_WHITE)
 	GUICtrlSetTip($Label_status, "Process Status!")
 	;
-	$Button_remove = GuiCtrlCreateButton("REMOVE", $width - 495, $height - 60, 75, 24)
+	$Button_remove = GuiCtrlCreateButton("REMOVE", $width - 495, $height - 65, 75, 26)
 	GUICtrlSetFont($Button_remove, 8, 600)
 	;GUICtrlSetResizing($Button_remove, $GUI_DOCKRIGHT + $GUI_DOCKALL + $GUI_DOCKSIZE)
 	GUICtrlSetTip($Button_remove, "Set the selected game for removal!")
 	;
-	$Button_apply = GuiCtrlCreateButton("APPLY", $width - 495, $height - 32, 75, 22)
+	$Button_apply = GuiCtrlCreateButton("APPLY", $width - 495, $height - 33, 75, 24)
 	GUICtrlSetFont($Button_apply, 8, 600)
 	;GUICtrlSetResizing($Button_save, $GUI_DOCKRIGHT + $GUI_DOCKALL + $GUI_DOCKSIZE)
 	GUICtrlSetTip($Button_apply, "APPLY the removals!")
 	;
-	$Button_detail = GuiCtrlCreateButton("DETAIL", $width - 410, $height - 60, 70, 24)
+	$Button_detail = GuiCtrlCreateButton("DETAIL", $width - 410, $height - 65, 65, 26)
 	GUICtrlSetFont($Button_detail, 8, 600)
 	;GUICtrlSetResizing($Button_detail, $GUI_DOCKRIGHT + $GUI_DOCKALL + $GUI_DOCKSIZE)
 	GUICtrlSetTip($Button_detail, "Detail for selected game!")
 	;
-	$Button_save = GuiCtrlCreateButton("SAVE", $width - 410, $height - 32, 70, 22)
+	$Button_save = GuiCtrlCreateButton("SAVE", $width - 410, $height - 33, 65, 24)
 	GUICtrlSetFont($Button_save, 8, 600)
 	;GUICtrlSetResizing($Button_save, $GUI_DOCKRIGHT + $GUI_DOCKALL + $GUI_DOCKSIZE)
 	GUICtrlSetTip($Button_save, "SAVE detail for selected game!")
 	;
-	$Button_check = GuiCtrlCreateButton("CHECK", $width - 330, $height - 60, 75, 50)
+	$Button_check = GuiCtrlCreateButton("CHECK", $width - 335, $height - 65, 80, 26)
 	GUICtrlSetFont($Button_check, 9, 600)
 	;GUICtrlSetResizing($Button_check, $GUI_DOCKRIGHT + $GUI_DOCKALL + $GUI_DOCKSIZE)
 	GUICtrlSetTip($Button_check, "Check for current games & prices!")
 	;
-	$Button_web = GuiCtrlCreateButton("WEB", $width - 245, $height - 60, 50, 50, $BS_ICON)
+	$Button_fold = GuiCtrlCreateButton("D", $width - 335, $height - 33, 24, 24, $BS_ICON)
+	GUICtrlSetTip($Button_fold, "Open the program folder!")
+	;
+	$Button_shop = GuiCtrlCreateButton("SHOP", $width - 302, $height - 33, 47, 24)
+	GUICtrlSetFont($Button_shop, 6, 600, 0, "Small Fonts")
+	GUICtrlSetTip($Button_shop, "Go to the ZOOM Platform store!")
+	;
+	$Button_web = GuiCtrlCreateButton("WEB", $width - 245, $height - 65, 50, 55, $BS_ICON)
 	;GUICtrlSetResizing($Button_web, $GUI_DOCKRIGHT + $GUI_DOCKALL + $GUI_DOCKSIZE)
 	GUICtrlSetTip($Button_web, "Go to the web page for selected game!")
 	;
-	$Button_log = GuiCtrlCreateButton("LOG", $width - 185, $height - 60, 50, 50, $BS_ICON)
+	$Button_log = GuiCtrlCreateButton("LOG", $width - 185, $height - 65, 50, 55, $BS_ICON)
 	;GUICtrlSetResizing($Button_log, $GUI_DOCKRIGHT + $GUI_DOCKALL + $GUI_DOCKSIZE)
 	GUICtrlSetTip($Button_log, "View the log record!")
 	;
-	$Button_info = GuiCtrlCreateButton("Info", $width - 125, $height - 60, 50, 50, $BS_ICON)
+	$Button_info = GuiCtrlCreateButton("Info", $width - 125, $height - 65, 50, 55, $BS_ICON)
 	;GUICtrlSetResizing($Button_info, $GUI_DOCKRIGHT + $GUI_DOCKALL + $GUI_DOCKSIZE)
 	GUICtrlSetTip($Button_info, "Program Information!")
 	;
-	$Button_quit = GuiCtrlCreateButton("EXIT", $width - 65, $height - 60, 50, 50, $BS_ICON)
+	$Button_quit = GuiCtrlCreateButton("EXIT", $width - 65, $height - 65, 50, 55, $BS_ICON)
 	;GUICtrlSetResizing($Button_quit, $GUI_DOCKRIGHT + $GUI_DOCKALL + $GUI_DOCKSIZE)
 	GUICtrlSetTip($Button_quit, "Exit / Close / Quit the program!")
 	;
@@ -199,6 +206,7 @@ Func MainGUI()
 	; OS SETTINGS
 	$user32 = @SystemDir & "\user32.dll"
 	$shell = @SystemDir & "\shell32.dll"
+	$icoD = -4
 	$icoI = -5
 	$icoT = -71
 	;$icoR = -239
@@ -208,6 +216,7 @@ Func MainGUI()
 	; SETTINGS
 	GUICtrlSetImage($Button_web, $shell, $icoW, 1)
 	GUICtrlSetImage($Button_log, $shell, $icoT, 1)
+	GUICtrlSetImage($Button_fold, $shell, $icoD, 0)
 	GUICtrlSetImage($Button_info, $user32, $icoI, 1)
 	GUICtrlSetImage($Button_quit, $user32, $icoX, 1)
 	;
@@ -279,6 +288,9 @@ Func MainGUI()
 				Else
 					MsgBox(262192, "Selection Error", "Please select a game title!", 0, $CheckerGUI)
 				EndIf
+			Case $msg = $Button_shop
+				; Go to the ZOOM Platform store
+				ShellExecute("https://zoom-platform.com/")
 			Case $msg = $Button_save
 				; SAVE detail for selected game
 				$ind = _GUICtrlListView_GetSelectedIndices($ListView_games, True)
@@ -447,6 +459,9 @@ Func MainGUI()
 				If $ans = 1 Then
 					ShellExecute($remfile)
 				EndIf
+			Case $msg = $Button_fold
+				; Open the program folder
+				ShellExecute(@ScriptDir)
 			Case $msg = $Button_fav
 				; Set selected game as a favorite
 				$ind = _GUICtrlListView_GetSelectedIndices($ListView_games, True)
@@ -558,22 +573,66 @@ Func MainGUI()
 					_FileReadToArray($zoomlist, $array)
 					For $a = 2 To $array[0]
 						$line = $array[$a]
-						;$line = StringSplit($line, ',"', 1)
-						$line = StringSplit($line, ',', 1)
-						If $line[0] = 4 Then
-							$game = $line[1]
+						; NOTE - Discovered 3 additions on 2nd April 2022 (Slug,Developers,Publishers).
+						;Name,Slug,Developers,Publishers,"Release Date","Last Update","Current Price"
+						$part = StringSplit($line, ',', 1)
+						$count = $part[0]
+						; NOTE - The following combines Developers & Publishers (due to unwanted commas), as this program does not use those items, so who cares.
+						If $count = 7 Then
+							$line = $part[3] & '+' & $part[4]
+							$line = $part[1] & ',' & $part[2] & ',' & $line & ',' & $part[5] & ',' & $part[6] & ',' & $part[7]
+						ElseIf $count = 8 Then
+							$line = $part[3] & '+' & $part[4] & '+' & $part[5]
+							$line = $part[1] & ',' & $part[2] & ',' & $line & ',' & $part[6] & ',' & $part[7] & ',' & $part[8]
+						ElseIf $count = 9 Then
+							$line = $part[3] & '+' & $part[4] & '+' & $part[5] & '+' & $part[6]
+							$line = $part[1] & ',' & $part[2] & ',' & $line & ',' & $part[7] & ',' & $part[8] & ',' & $part[9]
+						ElseIf $count = 10 Then
+							$line = $part[3] & '+' & $part[4] & '+' & $part[5] & '+' & $part[6] & '+' & $part[7]
+							$line = $part[1] & ',' & $part[2] & ',' & $line & ',' & $part[8] & ',' & $part[9] & ',' & $part[10]
+						ElseIf $count = 11 Then
+							$line = $part[3] & '+' & $part[4] & '+' & $part[5] & '+' & $part[6] & '+' & $part[7] & '+' & $part[8]
+							$line = $part[1] & ',' & $part[2] & ',' & $line & ',' & $part[9] & ',' & $part[10] & ',' & $part[11]
+						ElseIf $count = 12 Then
+							$line = $part[3] & '+' & $part[4] & '+' & $part[5] & '+' & $part[6] & '+' & $part[7] & '+' & $part[8] & '+' & $part[9]
+							$line = $part[1] & ',' & $part[2] & ',' & $line & ',' & $part[10] & ',' & $part[11] & ',' & $part[12]
+						ElseIf $count = 13 Then
+							$line = $part[3] & '+' & $part[4] & '+' & $part[5] & '+' & $part[6] & '+' & $part[7] & '+' & $part[8] & '+' & $part[9] & '+' & $part[10]
+							$line = $part[1] & ',' & $part[2] & ',' & $line & ',' & $part[11] & ',' & $part[12] & ',' & $part[13]
+						ElseIf $count = 14 Then
+							$line = $part[3] & '+' & $part[4] & '+' & $part[5] & '+' & $part[6] & '+' & $part[7] & '+' & $part[8] & '+' & $part[9] & '+' & $part[10] & '+' & $part[11]
+							$line = $part[1] & ',' & $part[2] & ',' & $line & ',' & $part[12] & ',' & $part[13] & ',' & $part[14]
+						EndIf
+						$line = StringReplace($line, '","', '|')
+						$line = StringReplace($line, '",', '|')
+						$line = StringReplace($line, ',"', '|')
+						$line = StringReplace($line, ',', '|')
+						$line = StringReplace($line, '|', '","')
+						$part = StringSplit($line, '","', 1)
+						;$part = StringSplit($line, ',"', 1)
+						$count = $part[0]
+						;If $line[0] = 4 Then
+						If $count = 6 Then
+							; NAME
+							$game = $part[1]
 							$game = StringReplace($game, '"', '')
 							$game = StringStripWS($game, 7)
 							If $game <> "" Then
-								$released = $line[2]
+								; RELEASE DATE
+								;$released = $part[2]
+								$released = $part[5]
 								$released = StringReplace($released, '"', '')
-								;$line = $line[3]
-								;$line = StringSplit($line, '",', 1)
-								;$updated = $line[1]
-								$updated = $line[3]
+								;$part = $part[3]
+								;$part = StringSplit($part, '",', 1)
+								; LAST UPDATE
+								;$updated = $part[1]
+								;$updated = $part[3]
+								$updated = $part[5]
 								$updated = StringReplace($updated, '"', '')
-								;$price = $line[2]
-								$price = $line[4]
+								; CURRENT PRICE
+								;$price = $part[2]
+								;$price = $part[4]
+								$price = $part[6]
 								$price = StringReplace($price, '"', '')
 								If $price = 0 Then $price = "0.00"
 								If $read = "" Then
@@ -651,7 +710,7 @@ Func MainGUI()
 								$found = $found + 1
 							EndIf
 						Else
-							MsgBox(262192, "Split Issue", $line & @LF & @LF & "(game entry skipped)", 0, $CheckerGUI)
+							MsgBox(262192, "Split Issue", $count & " splits found." & @LF & $line & @LF & "(game entry skipped)", 0, $CheckerGUI)
 						EndIf
 					Next
 					_FileWriteLog($logfle, "Checking Finished.")
@@ -1597,6 +1656,8 @@ Func SetStateOfControls($state)
 	GUICtrlSetState($Button_detail, $state)
 	GUICtrlSetState($Button_save, $state)
 	GUICtrlSetState($Button_check, $state)
+	GUICtrlSetState($Button_fold, $state)
+	GUICtrlSetState($Button_shop, $state)
 	GUICtrlSetState($Button_web, $state)
 	GUICtrlSetState($Button_log, $state)
 	GUICtrlSetState($Button_info, $state)

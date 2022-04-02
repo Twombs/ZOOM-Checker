@@ -104,3 +104,7 @@ This program downloads (checks for) a list of all games available at the ZOOM Pl
 v1.7 Update Notes
 -----------------
 Bugfix for unwanted spaces in a game name. LEGEND OF COLORS added near the start of this text file.
+
+v1.8 Update Notes
+-----------------
+Bugfix for unwanted commas due to the addition of three more fields (Slug,Developers,Publishers - all unused by this program). Added a button to open the program folder, and another to go to the ZOOM Platform store ... CHECK button was resized to accommodate.
