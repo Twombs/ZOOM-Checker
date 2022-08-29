@@ -49,8 +49,8 @@ $savefile = @ScriptDir & "\Saved.html"
 $templist = @ScriptDir & "\List.txt"
 $zoomlist = @ScriptDir & "\Games.csv"
 
-$update = "(updated April 2022)"
-$version = "v1.8"
+$update = "(updated August 2022)"
+$version = "v1.9"
 
 If Not FileExists($images) Then DirCreate($images)
 
@@ -688,6 +688,18 @@ Func MainGUI()
 												EndIf
 												$prior = $last
 												IniWrite($gamesfile, $game, "prior", $prior)
+											EndIf
+											If IniRead($gamesfile, $game, "start", "") = "" Then
+												$start = $last
+												IniWrite($gamesfile, $game, "start", $start)
+												If IniRead($gamesfile, $game, "low", "") = "" Then
+													$low = $last
+													IniWrite($gamesfile, $game, "low", $low)
+												EndIf
+												If IniRead($gamesfile, $game, "prior", "") = "" Then
+													$prior = $last
+													IniWrite($gamesfile, $game, "prior", $prior)
+												EndIf
 											EndIf
 										EndIf
 									Else
